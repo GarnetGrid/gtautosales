@@ -97,7 +97,7 @@ export const MOCK_VEHICLES = [
         price: 108000,
         mileage: 2100,
         type: "Sedan",
-        image: "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800&q=80",
+        image: "https://placehold.co/800x600?text=Tesla+Model+S+Plaid",
         featured: false,
         specs: { engine: "Triple Motor", transmission: "1-Speed", drivetrain: "AWD", color: "Pearl White" }
     },
@@ -206,7 +206,7 @@ export const UPCOMING_VEHICLES = [
         year: 2024,
         price: 350000,
         arrival: "late Oct 2025",
-        image: "assets/car1.jpg" // Placeholder
+        image: "assets/ferrari-296.png"
     },
     {
         make: "Lotus",
@@ -214,7 +214,7 @@ export const UPCOMING_VEHICLES = [
         year: 2025,
         price: 95000,
         arrival: "Nov 2025",
-        image: "assets/car2.jpg"
+        image: "assets/lotus-emira.png"
     },
     {
         make: "Porsche",
@@ -222,7 +222,7 @@ export const UPCOMING_VEHICLES = [
         year: 2025,
         price: 85000,
         arrival: "Dec 2025",
-        image: "assets/car3.jpg"
+        image: "assets/porsche-macan.png"
     },
     {
         make: "Aston Martin",
@@ -230,7 +230,7 @@ export const UPCOMING_VEHICLES = [
         year: 2025,
         price: 800000,
         arrival: "Early 2026",
-        image: "assets/hero-bg.jpg"
+        image: "assets/aston-martin-valhalla.png"
     },
     {
         make: "BMW",
@@ -238,6 +238,6 @@ export const UPCOMING_VEHICLES = [
         year: 2025,
         price: 140000,
         arrival: "Jan 2026",
-        image: "assets/car1.jpg"
+        image: "assets/bmw-m5-touring.png"
     }
 ];
