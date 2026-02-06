@@ -27,6 +27,9 @@ Advanced filtering by Make, Model, and Price with real-time updates.
 Comprehensive specifications, financing calculator (mock), and lead generation forms.
 ![Vehicle Details](src/assets/docs/vehicle-details.png)
 
+> [!TIP]
+> **[View Full Walkthrough & Verification Log](docs/WALKTHROUGH.md)** for a detailed breakdown of all features and architectural decisions.
+
 ## Setup & Run
 1.  **Clone the repository:**
     ```bash
