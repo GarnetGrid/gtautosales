@@ -9,6 +9,24 @@ A premium automotive dealership website built with modern HTML5, CSS3, and JavaS
 -   **Modular Architecture:** Built with ES Modules and a `VehicleService` layer for data abstraction.
 -   **Mobile First:** Fully responsive design for all devices.
 
+## Visual Walkthrough
+
+### 1. Immersive Hero Section
+Premium first impression with a dynamic call-to-action.
+![Hero Section](src/assets/docs/home-hero.png)
+
+### 2. Featured Inventory
+High-quality vehicle cards with key specs and transparent pricing.
+![Featured Vehicles](src/assets/docs/home-featured.png)
+
+### 3. Dynamic Inventory Grid
+Advanced filtering by Make, Model, and Price with real-time updates.
+![Inventory Grid](src/assets/docs/inventory-grid.png)
+
+### 4. Detailed Vehicle Pages
+Comprehensive specifications, financing calculator (mock), and lead generation forms.
+![Vehicle Details](src/assets/docs/vehicle-details.png)
+
 ## Setup & Run
 1.  **Clone the repository:**
     ```bash
