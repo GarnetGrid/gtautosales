@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financing | GT Auto Sales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            box-shadow: var(--shadow-card);
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--color-grey);
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .form-section-title {
+            border-bottom: 2px solid var(--color-light);
+            padding-bottom: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+            font-size: 1.25rem;
+            color: var(--color-primary);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 900;">GT AUTO
+                    SALES</span>
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="inventory.html" class="nav-link">Inventory</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="financing.html" class="nav-link" style="color: var(--color-accent);">Financing</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle navigation"> ☰ </button>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: var(--spacing-xl);">
+                <h1 class="section-title">Financing Application</h1>
+                <p>Get pre-approved for your dream car today. Fast, easy, and secure.</p>
+            </div>
+
+            <div class="form-container">
+                <form onsubmit="event.preventDefault(); alert('Application submitted! We will contact you shortly.');">
+
+                    <div class="form-group" id="vehicle-section"
+                        style="display: none; background: #f9f9f9; padding: 1rem; border-radius: 4px; margin-bottom: 1rem; border: 1px solid #ddd;">
+                        <label for="vehicle-interest" style="color: var(--color-secondary);">Applying for:</label>
+                        <input type="text" id="vehicle-interest" readonly
+                            style="background: transparent; border: none; font-weight: bold; font-size: 1.1rem; padding: 0;">
+                    </div>
+
+                    <h3 class="form-section-title" style="margin-top: 0;">Personal Information</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-md);">
+                        <div class="form-group">
+                            <label for="fname">First Name</label>
+                            <input type="text" id="fname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lname">Last Name</label>
+                            <input type="text" id="lname" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+
+                    <h3 class="form-section-title">Employment Information</h3>
+                    <div class="form-group">
+                        <label for="employer">Employer Name</label>
+                        <input type="text" id="employer">
+                    </div>
+                    <div class="form-group">
+                        <label for="income">Annual Income</label>
+                        <input type="number" id="income" placeholder="$">
+                    </div>
+
+                    <div class="form-group" style="margin-top: var(--spacing-lg);">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Application</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>GT Auto Sales</h3>
+                <p>Your trusted partner in finding the perfect vehicle.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="inventory.html">Browse Cars</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="financing.html">Apply for Financing</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>123 Auto Drive, Car City, ST 12345</p>
+                <p>Phone: (555) 123-4567</p>
+                <p>Email: sales@gtautosales.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 GT Auto Sales. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

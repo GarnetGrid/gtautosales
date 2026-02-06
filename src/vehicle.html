@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Details | GT Auto Sales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="GT Auto Sales Logo" height="40">
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="inventory.html" class="nav-link" style="color: var(--color-accent);">Inventory</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="financing.html" class="nav-link">Financing</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle navigation"> ☰ </button>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="container" id="vehicle-detail-container">
+            <p>Loading vehicle details...</p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>GT Auto Sales</h3>
+                <p>Your trusted partner in finding the perfect vehicle.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="inventory.html">Browse Cars</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="financing.html">Apply for Financing</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>123 Auto Drive, Car City, ST 12345</p>
+                <p>Phone: (555) 123-4567</p>
+                <p>Email: sales@gtautosales.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 GT Auto Sales. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

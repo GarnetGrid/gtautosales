@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | GT Auto Sales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-info-card {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            height: 100%;
+        }
+
+        .info-item {
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+        }
+
+        .info-icon {
+            color: var(--color-secondary);
+            font-size: 1.25rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 900;">GT AUTO
+                    SALES</span>
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="inventory.html" class="nav-link">Inventory</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="financing.html" class="nav-link">Financing</a></li>
+                    <li><a href="contact.html" class="nav-link" style="color: var(--color-accent);">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle navigation"> ☰ </button>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            <h1 class="section-title" style="text-align: center; margin-bottom: var(--spacing-xl);">Contact Us</h1>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-info-card">
+                        <h3 style="margin-bottom: var(--spacing-md);">Get In Touch</h3>
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <div>
+                                <strong>Address:</strong><br>
+                                123 Auto Drive<br>
+                                Car City, ST 12345
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <div>
+                                <strong>Phone:</strong><br>
+                                (555) 123-4567
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">✉️</span>
+                            <div>
+                                <strong>Email:</strong><br>
+                                sales@gtautosales.com
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏰</span>
+                            <div>
+                                <strong>Hours:</strong><br>
+                                Mon-Fri: 9am - 7pm<br>
+                                Sat: 10am - 5pm<br>
+                                Sun: Closed
+                            </div>
+                        </div>
+
+                        <!-- Map Placeholder -->
+                        <div
+                            style="background: #eee; height: 250px; margin-top: var(--spacing-lg); border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+                            Map Placeholder (Google Maps Embed)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form
+                        style="background: white; padding: var(--spacing-lg); border-radius: 8px; box-shadow: var(--shadow-light);"
+                        onsubmit="event.preventDefault(); alert('Message sent!');">
+                        <h3 style="margin-bottom: var(--spacing-md);">Send us a Message</h3>
+                        <div class="form-group" style="margin-bottom: var(--spacing-md);">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Name</label>
+                            <input type="text" required
+                                style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-grey); border-radius: 4px;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: var(--spacing-md);">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email</label>
+                            <input type="email" required
+                                style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-grey); border-radius: 4px;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: var(--spacing-md);">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Message</label>
+                            <textarea rows="5" id="message" required
+                                style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-grey); border-radius: 4px;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>GT Auto Sales</h3>
+                <p>Your trusted partner in finding the perfect vehicle.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="inventory.html">Browse Cars</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="financing.html">Apply for Financing</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>123 Auto Drive, Car City, ST 12345</p>
+                <p>Phone: (555) 123-4567</p>
+                <p>Email: sales@gtautosales.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 GT Auto Sales. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

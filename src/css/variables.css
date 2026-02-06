@@ -1,0 +1,60 @@
+:root {
+    /* Brand Colors */
+    --color-primary: #0a1f33;      /* Deep Navy */
+    --color-secondary: #e63946;    /* Accent Red */
+    --color-accent: #f4a261;       /* Warm Orange for highlights */
+    --color-dark: #121212;         /* Pitch Black */
+    --color-light: #f1f1f1;        /* Off White */
+    --color-grey: #8d99ae;         /* Metallic Grey */
+
+    /* Typography */
+    --font-heading: 'Roboto', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+    
+    /* Layout */
+    --container-width: 1200px;
+    --header-height: 80px;
+    
+    /* Effects */
+    --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-card: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-fast);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}

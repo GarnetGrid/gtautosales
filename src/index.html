@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GT Auto Sales | Premium Used Cars</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google Analytics Placeholder -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-XXXXX-Y');
+    </script> -->
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoDealer",
+      "name": "GT Auto Sales",
+      "image": "https://www.gtautosales.com/assets/gt_auto_sales_logo.png",
+      "@id": "https://www.gtautosales.com",
+      "url": "https://www.gtautosales.com",
+      "telephone": "+1-555-123-4567",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Auto Drive",
+        "addressLocality": "Car City",
+        "addressRegion": "ST",
+        "postalCode": "12345",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.712776,
+        "longitude": -74.005974
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "19:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/gtautosales",
+        "https://www.instagram.com/gtautosales"
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html">
+                <div class="logo">
+                    <img src="assets/logo.svg" alt="GT Auto Sales Logo" height="40">
+                </div>
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="inventory.html" class="nav-link">Inventory</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="financing.html" class="nav-link">Financing</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1 class="hero-title">Find Your Dream Ride</h1>
+                <p class="hero-subtitle">Premium selected vehicles at unbeatable prices.</p>
+                <a href="inventory.html" class="btn btn-primary">View Inventory</a>
+            </div>
+        </section>
+
+        <!-- Featured Inventory Placeholder -->
+        <section class="featured-inventory section-padding">
+            <div class="container">
+                <h2 class="section-title">Featured Vehicles</h2>
+                <div class="inventory-grid" id="featured-cars">
+                    <!-- Dynamic Content -->
+                    <p>Loading inventory...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Testimonials -->
+        <section class="section-padding" style="background-color: var(--color-light);">
+            <div class="container">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <div class="testimonials-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="testimonial-card"
+                        style="background: white; padding: 2rem; border-radius: 8px; box-shadow: var(--shadow-light);">
+                        <p style="font-style: italic; margin-bottom: 1rem;">"The team at GT Auto Sales made buying my
+                            dream M4 a breeze. Transparent pricing and exceptional service."</p>
+                        <h4 style="color: var(--color-primary); margin-bottom: 0;">James Wilson</h4>
+                        <span style="color: var(--color-secondary);">★★★★★</span>
+                    </div>
+                    <div class="testimonial-card"
+                        style="background: white; padding: 2rem; border-radius: 8px; box-shadow: var(--shadow-light);">
+                        <p style="font-style: italic; margin-bottom: 1rem;">"Top notch inventory. I looked everywhere
+                            for a clean G-Wagon and found it here. Highly recommended."</p>
+                        <h4 style="color: var(--color-primary); margin-bottom: 0;">Sarah Jenkins</h4>
+                        <span style="color: var(--color-secondary);">★★★★★</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Inventory -->
+        <section class="section-padding">
+            <div class="container">
+                <h2 class="section-title">Arriving Soon</h2>
+                <p class="section-subtitle" style="text-align: center; margin-bottom: 2rem; color: var(--color-grey);">
+                    Be the first to know when these vehicles land.</p>
+                <div class="inventory-grid" id="upcoming-cars">
+                    <!-- Populated by JS -->
+                    <p>Loading upcoming inventory...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>GT Auto Sales</h3>
+                <p>Your trusted partner in finding the perfect vehicle.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="inventory.html">Browse Cars</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="financing.html">Apply for Financing</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>123 Auto Drive, Car City, ST 12345</p>
+                <p>Phone: (555) 123-4567</p>
+                <p>Email: sales@gtautosales.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 GT Auto Sales. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | GT Auto Sales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: transform 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-img {
+            height: 250px;
+            background-color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .service-content {
+            padding: var(--spacing-lg);
+            flex: 1;
+        }
+
+        .service-content h3 {
+            margin-bottom: var(--spacing-md);
+            color: var(--color-primary);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="GT Auto Sales Logo" height="40">
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="inventory.html" class="nav-link">Inventory</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="services.html" class="nav-link" style="color: var(--color-accent);">Services</a></li>
+                    <li><a href="financing.html" class="nav-link">Financing</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle navigation"> ☰ </button>
+        </div>
+    </header>
+
+    <div class="hero" style="min-height: 40vh; padding: 10vh 0;">
+        <div class="container">
+            <h1 class="hero-title">Expert Service & Tuning</h1>
+            <p class="hero-subtitle">Premium care for premium vehicles.</p>
+        </div>
+    </div>
+
+    <main class="section-padding">
+        <div class="container">
+            <div class="service-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-img">✨</div>
+                    <div class="service-content">
+                        <h3>Detailing & Car Wash</h3>
+                        <p>Keep your vehicle looking showroom fresh with our premium detailing packages. From hand
+                            washing to ceramic coating, we protect your investment.</p>
+                        <ul style="margin-top: 1rem; margin-bottom: 2rem;">
+                            <li>Interior Deep Clean</li>
+                            <li>Paint Correction</li>
+                            <li>Ceramic Coating</li>
+                        </ul>
+                        <a href="contact.html?service=detail" class="btn btn-primary">Book Appointment</a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-img">🛠️</div>
+                    <div class="service-content">
+                        <h3>Body Shop & Collision</h3>
+                        <p>Accidents happen. Our certified technicians restore your vehicle to factory specifications
+                            using state-of-the-art equipment.</p>
+                        <ul style="margin-top: 1rem; margin-bottom: 2rem;">
+                            <li>Collision Repair</li>
+                            <li>Dent Removal</li>
+                            <li>Paint Matching</li>
+                        </ul>
+                        <a href="contact.html?service=body" class="btn btn-primary">Get Estimate</a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-img">🏎️</div>
+                    <div class="service-content">
+                        <h3>Performance Tuning</h3>
+                        <p>Unlock the full potential of your machine. We specialize in ECU tuning, exhaust systems, and
+                            suspension upgrades.</p>
+                        <ul style="margin-top: 1rem; margin-bottom: 2rem;">
+                            <li>Stage 1 & 2 Maps</li>
+                            <li>Exhaust Systems</li>
+                            <li>Suspension Tuning</li>
+                        </ul>
+                        <a href="contact.html?service=tuning" class="btn btn-primary">Upgrade Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>GT Auto Sales</h3>
+                <p>Your trusted partner in finding the perfect vehicle.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="inventory.html">Browse Cars</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="financing.html">Apply for Financing</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>123 Auto Drive, Car City, ST 12345</p>
+                <p>Phone: (555) 123-4567</p>
+                <p>Email: sales@gtautosales.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 GT Auto Sales. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

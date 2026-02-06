@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory | GT Auto Sales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .filter-section {
+            background: white;
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 600;
+        }
+
+        .filter-group select,
+        .filter-group input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid var(--color-grey);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="assets/logo.svg" alt="GT Auto Sales Logo" height="40">
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="inventory.html" class="nav-link" style="color: var(--color-accent);">Inventory</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="financing.html" class="nav-link">Financing</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle navigation"> ☰ </button>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            <h1 class="section-title">Current Inventory</h1>
+
+            <div class="inventory-layout">
+                <aside class="sidebar-filters">
+                    <div class="filter-header">
+                        <h3>Filter Inventory</h3>
+                    </div>
+                    <form id="inventory-filters">
+                        <div class="filter-group">
+                            <label for="make">Make</label>
+                            <select id="make" name="make">
+                                <option value="all">All Makes</option>
+                                <option value="BMW">BMW</option>
+                                <option value="Mercedes">Mercedes</option>
+                                <option value="Porsche">Porsche</option>
+                                <option value="Audi">Audi</option>
+                                <option value="Range Rover">Range Rover</option>
+                                <option value="Tesla">Tesla</option>
+                                <option value="Chevrolet">Chevrolet</option>
+                                <option value="Cadillac">Cadillac</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="type">Body Type</label>
+                            <select id="type" name="type">
+                                <option value="all">All Types</option>
+                                <option value="Sports">Sports</option>
+                                <option value="SUV">SUV</option>
+                                <option value="Sedan">Sedan</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="price">Max Price ($)</label>
+                            <input type="number" id="price" name="price" placeholder="e.g. 100000" step="5000">
+                        </div>
+
+                        <div class="filter-group double-input">
+                            <label>Year Range</label>
+                            <div class="input-row">
+                                <input type="number" id="year-min" name="year-min" placeholder="Min" min="2000">
+                                <input type="number" id="year-max" name="year-max" placeholder="Max" max="2025">
+                            </div>
+                        </div>
+                    </form>
+                </aside>
+
+                <div class="inventory-content">
+                    <div class="inventory-grid">
+                        <!-- Populated by JS -->
+                        <p>Loading inventory...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <!-- Reusing footer content from index.html - ideally utilize a component loader or SSI, but for static site copy-paste/js-injection is fine -->
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>GT Auto Sales</h3>
+                <p>Your trusted partner in finding the perfect vehicle.</p>
+            </div>
+            <!-- ... -->
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 GT Auto Sales. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
