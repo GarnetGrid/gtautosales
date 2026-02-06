@@ -1,0 +1,734 @@
+.dws-forms-header-section,
+.dws-forms-footer-text {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+}
+.layout-1 .dws-forms-term-container,
+.layout-2 .dws-forms-term-container,
+.layout-4 .dws-forms-term-container {
+  max-width: 624px;
+  padding: 0 12px 0;
+}
+.dws-forms-modal-dialog .dws-forms-header-section,
+.dws-forms-modal-dialog .dws-forms-footer-text {
+  max-width: 624px;
+}
+.dws-forms-credit-app .dws-forms-accept-terms,
+.dws-forms-credit-app .dws-forms-footer-text {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 720px;
+}
+.dws-forms-credit-app .dws-forms-section.upload-file-widget-containers.dws-forms-section-file-attachments.row {
+  max-width: 720px;
+}
+.dws-forms-credit-app .upload-file-widget-containers {
+  max-width: 740px;
+  background-color: transparent;
+}
+.dws-forms-credit-app .upload-file-widget-containers .file-upload-container {
+  background-color: transparent;
+}
+.dws-forms-credit-app .upload-file-widget-containers .file-upload-container .dws-secured-form-fileupload {
+  padding-left: 14px;
+}
+.dws-forms-credit-app .upload-file-widget-containers .file-upload-container .dws-secured-form-fileupload #fileupload #dropzone {
+  background: #eee;
+}
+.dws-forms-term-container {
+  padding: 15px 0 0;
+}
+.dws-forms-term-container label {
+  font-size: 0.75em;
+  line-height: 2;
+}
+.dws-forms-section {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 624px;
+  padding-bottom: 24px;
+}
+.layout-3 .tab-container .dws-forms-section {
+  margin-bottom: 0;
+}
+.layout-3 .tab-container .dws-forms-section .dws-field-and-icon-container {
+  border-radius: 5px;
+}
+.layout-3 .tab-container .dws-field-icon-container {
+  position: absolute;
+  right: 10px;
+  top: 4px;
+}
+.layout-3 .tab-container .dws-field-and-icon-container {
+  position: relative;
+}
+.dws-forms-wrapper {
+  /* Remove arrows/spinners in Chrome, Safari, Edge, Opera */
+  /* Remove arrows/spinners in Firefox */
+}
+.dws-forms-wrapper .dws-field-icon-container {
+  position: absolute;
+  right: 25px;
+  top: 10px;
+}
+.dws-forms-wrapper .dws-field-and-icon-container {
+  position: relative;
+}
+.dws-forms-wrapper .dws-forms-section .dws-field-wrap {
+  width: 100%;
+  border: 1px solid #CCC;
+  background-color: #F9F9F9;
+  border-radius: 0px;
+}
+.dws-forms-wrapper .dws-forms-section .dws-field-wrap .dws-forms-form-control {
+  width: calc(100% - 140px);
+  border: 0;
+}
+.dws-forms-wrapper .dws-forms-section .dws-field-wrap .dws-forms-form-control:focus {
+  box-shadow: none;
+}
+.dws-forms-wrapper .dws-forms-section .dws-forms-years-at-address-years label,
+.dws-forms-wrapper .dws-forms-section .dws-forms-co-buyer-previous-years-at-address-years label,
+.dws-forms-wrapper .dws-forms-section .dws-forms-previous-years-at-address-years label,
+.dws-forms-wrapper .dws-forms-section .dws-forms-additional-employment-years label {
+  text-wrap: nowrap;
+}
+.dws-forms-wrapper .dws-forms-section .dws-field-and-icon-container .dws-forms-form-control:focus {
+  box-shadow: none;
+}
+.dws-forms-wrapper .dws-forms-section .dws-field-and-icon-container.dws-time-field-container .dws-forms-form-control {
+  width: 100%;
+}
+.dws-forms-wrapper .dws-forms-section .dws-forms-trade-in {
+  padding-left: 0;
+}
+.dws-forms-wrapper .dws-forms-section .dws-forms-trade-in label {
+  font-weight: inherit;
+}
+.dws-forms-wrapper .dws-forms-section .dws-forms-trade-in .form-check-inline {
+  display: inline-block;
+  margin-right: 1rem;
+  min-height: 1.5rem;
+  padding-left: 1.5em;
+  margin-bottom: 0.125rem;
+}
+.dws-forms-wrapper .dws-forms-section .dws-forms-trade-in .form-check-inline .form-check-input {
+  float: left;
+  margin-left: -1.5em;
+}
+.dws-forms-wrapper .dws-forms-section:first-child {
+  margin-top: 16px;
+}
+.dws-forms-wrapper .dws-forms-section .dws-field-and-icon-container:focus-within,
+.dws-forms-wrapper .dws-forms-section .dws-field-wrap:focus-within {
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+.dws-forms-wrapper .dws-forms-thank-you-section-separator .dws-forms-section:first-child {
+  margin-top: 0;
+}
+.dws-forms-wrapper input::-webkit-outer-spin-button,
+.dws-forms-wrapper input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.dws-forms-wrapper input[type=number] {
+  -moz-appearance: textfield;
+}
+.dws-forms-wrapper.was-validated .dws-forms-section .dws-forms-form-control:valid:focus,
+.dws-forms-wrapper.was-validated .dws-forms-section .dws-forms-form-control.is-valid:focus {
+  box-shadow: none;
+}
+.dws-forms-form-select.is-valid:not([multiple]):not([size]),
+.dws-forms-form-select.is-valid:not([multiple])[size="1"] {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1em' viewBox='0 0 320 512'%3E%3Cstyle%3Esvg%7Bfill:%239C9C9C%7D%3C/style%3E%3Cpath d='M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z'/%3E%3C/svg%3E"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+}
+.was-validated {
+  /* remove check mark from validated optinal fields */
+}
+.was-validated .dws-forms-form-select:valid:not([multiple]):not([size]),
+.was-validated .dws-forms-form-select:valid:not([multiple])[size="1"] {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1em' viewBox='0 0 320 512'%3E%3Cstyle%3Esvg%7Bfill:%239C9C9C%7D%3C/style%3E%3Cpath d='M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z'/%3E%3C/svg%3E"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+}
+.was-validated.was-validated .form-control.dws-forms-form-control:valid:optional,
+.was-validated .form-control.dws-forms-form-control.is-valid:optional {
+  background-image: none;
+  padding-right: inherit;
+}
+.was-validated.was-validated .form-select.dws-forms-form-select:valid:optional,
+.was-validated .form-select.dws-forms-form-select.is-valid:optional {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1em' viewBox='0 0 320 512'%3E%3Cstyle%3Esvg%7Bfill:%239C9C9C%7D%3C/style%3E%3Cpath d='M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z'/%3E%3C/svg%3E");
+  padding-right: 16px;
+}
+.was-validated .form-select.is-valid,
+.was-validated .form-select:valid {
+  border-color: #C1C1C1;
+}
+.was-validated.dws-forms-survey .dws-forms-form-select:valid:not([multiple]):not([size]),
+.was-validated.dws-forms-survey .dws-forms-form-select:valid:not([multiple])[size="1"] {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1em' viewBox='0 0 320 512'%3E%3Cstyle%3Esvg%7Bfill:%239C9C9C%7D%3C/style%3E%3Cpath d='M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z'/%3E%3C/svg%3E");
+}
+.was-validated.dws-forms-survey .form-control.dws-forms-form-control.is-valid:not(:required),
+.was-validated.dws-forms-survey .form-control.dws-forms-form-control:valid:not(:required) {
+  background-image: none;
+}
+.dws-forms-footer-section,
+.dws-forms-buttons-section,
+.dws-forms-message-section,
+.dws-forms-term-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  width: 100%;
+}
+.dws-forms-message-section {
+  margin-top: 16px;
+}
+.dws-forms-modal-dialog .dws-forms-header-title {
+  color: #333;
+  /* font size is 24px based on .dws-forms-wrapper font-size */
+  font-size: 1.5em;
+  font-weight: 500;
+  /* line height is 22px based on font-size */
+  line-height: 0.91666667;
+  margin-bottom: 0;
+}
+.dws-forms-modal-dialog .dws-forms-header-text,
+.dws-forms-modal-dialog .dws-forms-footer-text,
+.dws-forms-modal-dialog .form-label,
+.dws-forms-modal-dialog .dws-forms-form-label,
+.dws-forms-modal-dialog .dws-forms-form-check-label,
+.dws-forms-modal-dialog .dws-textarea-char-counter-label,
+.dws-forms-modal-dialog .co-buyer-actions-wp .co-buyer-actions-value span {
+  color: #000;
+}
+.dws-forms-modal-dialog .dws-forms-credit-app-layout-2-container {
+  padding: 20px;
+}
+.dws-forms-modal-dialog .dws-forms-credit-app-layout-2-container p {
+  color: #000;
+}
+.dws-forms-modal-dialog .dws-forms-credit-app-layout-2-container .dws-forms-credit-app-layout-2-item label {
+  color: #000;
+}
+.dws-forms-modal-dialog .dws-forms-credit-app-layout-2-container .review-section .title-wp .section-title {
+  margin-left: 0;
+}
+.dws-forms-modal-dialog .dws-forms-header-section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 16px;
+  padding: 32px 10px 10px 10px;
+}
+.dws-forms-modal-dialog .dws-forms-header-text {
+  font-weight: 400;
+  margin-bottom: 0;
+}
+.dws-forms-modal-dialog .dws-forms-header-text .dws-header-text-site-name {
+  font-weight: 600;
+}
+.dws-forms-modal-dialog .modal-body h5.dws-forms-loader-text {
+  font-size: 14px;
+  margin: 10px 0;
+  padding: 5px 15px 0 15px;
+}
+.dws-forms-modal-dialog .modal-body .progress {
+  margin: 0 15px 20px 15px;
+}
+.dws-forms-wrapper {
+  font-family: 'Roboto', sans-serif;
+  /* font size is 16px based on Chrome > Settings > Appearance > Font Size > Medium option */
+  font-size: 1rem;
+  /* line height is 22px based on font-size (where: 22/16) */
+  line-height: 1.375;
+}
+.dws-forms-wrapper .form-control.dws-forms-form-control {
+  /* font size is 14px based on .dws-forms-wrapper font-size */
+  font-size: 0.875em;
+  font-weight: 300;
+  height: 46px;
+  /* line height is 22px based on font-size */
+  line-height: 1.57142857;
+  padding: 10px 16px 10px 16px;
+  color: #333;
+}
+.dws-forms-wrapper .form-control.dws-forms-form-control::placeholder {
+  color: #777;
+}
+.dws-forms-wrapper textarea.form-control.dws-forms-form-control {
+  min-height: 80px;
+}
+.dws-forms-wrapper .dws-forms-form-select {
+  display: inline-block;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: none;
+  border-radius: 0;
+  border: 1px solid #C1C1C1;
+  background-color: #F9F9F9;
+  font-size: 0.875em;
+  font-weight: 300;
+  height: 46px;
+  line-height: 1.57142857em;
+  padding: 10px 16px 10px 16px;
+  color: #858585;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1em' viewBox='0 0 320 512'%3E%3Cstyle%3Esvg%7Bfill:%239C9C9C%7D%3C/style%3E%3Cpath d='M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z'/%3E%3C/svg%3E");
+}
+.dws-forms-wrapper .select-field-container {
+  color: #333;
+}
+.dws-forms-wrapper textarea.form-control {
+  height: 80px;
+  resize: none;
+}
+.dws-forms-wrapper .dws-forms-section {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.dws-forms-wrapper .dws-forms-section .dws-form-group,
+.dws-forms-wrapper .dws-forms-section .dws-form-group-full-width {
+  margin-bottom: 16px;
+}
+.dws-forms-wrapper .dws-forms-section .dws-form-group:last-child,
+.dws-forms-wrapper .dws-forms-section .dws-form-group-full-width:last-child,
+.dws-forms-wrapper .dws-forms-section .dws-forms-testimonial-review-message {
+  margin-bottom: 0;
+}
+.dws-forms-wrapper .dws-forms-section .dws-forms-section-title {
+  font-weight: 500;
+}
+.dws-forms-wrapper .dws-forms-section .dws-textarea-char-counter-label {
+  color: #666;
+  /* font size is 12px based on .dws-forms-wrapper font-size */
+  font-size: 0.75em;
+  font-weight: 400;
+  /* line height is 22px based on font-size */
+  line-height: 1.83333333em;
+  margin-top: 4px;
+  text-align: right;
+  margin-bottom: -10px;
+}
+.dws-forms-wrapper .dws-forms-section .input-group-text,
+.dws-forms-wrapper .dws-forms-section .input-group-addon {
+  background-color: #F9F9F9;
+  border-color: #C1C1C1;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  border-radius: 0;
+  color: #9C9C9C;
+  font-size: 20px;
+  line-height: 1.1;
+  padding: 10px 16px;
+}
+.dws-forms-wrapper .dws-forms-footer-section,
+.dws-forms-wrapper .dws-forms-term-container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 16px;
+  width: 100%;
+}
+.dws-forms-wrapper .dws-forms-footer-section .dws-forms-footer-text,
+.dws-forms-wrapper .dws-forms-term-container .dws-forms-footer-text {
+  /* font size is 12px based on .dws-forms-wrapper font-size */
+  font-size: 0.75em;
+  /* line size is 16px based on font-size */
+  line-height: 1.33333333;
+  padding-bottom: 16px;
+  padding-top: 16px;
+}
+.dws-forms-wrapper .dws-forms-footer-section .dws-forms-footer-text p,
+.dws-forms-wrapper .dws-forms-term-container .dws-forms-footer-text p {
+  margin-bottom: 0;
+}
+.dws-forms-wrapper .dws-forms-buttons-section {
+  border-top: 1px solid #D1D1D1;
+}
+.dws-forms-wrapper .dws-forms-buttons-wrapper {
+  align-items: flex-end;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  padding: 12px 16px;
+}
+.dws-forms-wrapper .dws-forms-buttons-wrapper .dws-forms-button {
+  background: #EA0000;
+  border: none;
+  border-radius: 36px;
+  color: #fff;
+  /* font size is 14px based on .dws-forms-wrapper font-size */
+  font-size: 0.875em;
+  font-weight: 500;
+  /* line height is 22px based on font-size */
+  line-height: 1.57142857;
+  padding: 8px 24px;
+  width: 160px;
+}
+.dws-forms-wrapper .dws-forms-buttons-wrapper .dws-forms-button .dws-forms-btn-loader {
+  color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  width: 22px;
+  height: 22px;
+  display: none;
+}
+.dws-forms-wrapper .bhph-vantiv-iframe-container {
+  display: none;
+}
+.dws-forms-wrapper .bhph-vantiv-iframe-container .vantiv-hosted-checkout-iframe {
+  display: inline;
+  width: 100%;
+  height: 430px;
+}
+.dws-forms-wrapper .bhph-vantiv-iframe-container iframe.worldpay {
+  height: 370px !important;
+}
+.dws-forms-wrapper .bhph-vantiv-iframe-container iframe.is-loading {
+  background-color: #c3c3c3;
+  background-image: url(../img/ajax-loader.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.dws-forms-wrapper .dws-forms-error-wrapper .dws-forms-error-message,
+.dws-forms-wrapper .dws-forms-validation-error-wrapper .dws-forms-error-message {
+  display: flex;
+  height: auto;
+  padding: 10px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 5px;
+  border: 1px solid #FDC6C6;
+  background: #F4F4F4;
+  color: #D23838;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.layout-3 .dws-forms-form-select {
+  display: inline-block;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: none;
+  border-radius: 5px;
+  border: 1px solid #CCC;
+  background-color: #F9F9F9;
+  font-size: 0.75em;
+  height: 2.66em;
+  line-height: 1.375em;
+  padding: 0 12px;
+}
+.dws-forms-modal-dialog .modal-title img {
+  max-height: 50px;
+}
+.dws-forms-modal-dialog .modal-header {
+  align-items: center;
+  display: flex;
+  height: 65px;
+  justify-content: space-between;
+  padding: 0px 24px;
+}
+.dws-forms-modal-dialog .modal-header .modal-title {
+  margin: 0 auto;
+}
+.dws-forms-modal-dialog button.close {
+  border: none;
+  background: #fff;
+  color: #d9d9d9;
+  font-size: 1.25em;
+  font-weight: 900;
+  line-height: 1.1;
+  position: absolute;
+  right: 24px;
+}
+@media (min-width: 1200px) {
+  .dws-forms-modal-dialog .modal-dialog.modal-xl {
+    margin: 1.75rem auto;
+    max-width: 800px;
+    width: 800px;
+  }
+}
+.dws-forms-modal .dws-forms-wrapper.dws-forms-section-thank-you-message,
+.dws-forms-modal-dialog .dws-forms-wrapper.dws-forms-section-thank-you-message {
+  margin-bottom: 1em;
+}
+.dws-forms-modal .dws-forms-wrapper.dws-forms-section-thank-you-message .dws-forms-thank-you-title,
+.dws-forms-modal-dialog .dws-forms-wrapper.dws-forms-section-thank-you-message .dws-forms-thank-you-title,
+.dws-forms-modal .dws-forms-wrapper.dws-forms-section-thank-you-message .dws-forms-thank-you-message,
+.dws-forms-modal-dialog .dws-forms-wrapper.dws-forms-section-thank-you-message .dws-forms-thank-you-message,
+.dws-forms-modal .dws-forms-wrapper.dws-forms-section-thank-you-message .dws-forms-notification-message,
+.dws-forms-modal-dialog .dws-forms-wrapper.dws-forms-section-thank-you-message .dws-forms-notification-message {
+  color: #000000;
+}
+.dws-form-button-container button.btn-default {
+  color: #000;
+}
+.dws-form-button-container button.dws-bhph-button-width-M {
+  padding: 10px 25px 7px 25px;
+  font-size: 16px;
+}
+.dws-form-button-container button.dws-bhph-button-width-L {
+  padding: 10px 25px 7px 25px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.dws-forms-wrapper.dws-forms-section-thank-you-message .dws-forms-notification-message {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #5AC270;
+  background-color: #F2FBF4;
+  color: #000000;
+}
+.dws-forms-wrapper.dws-forms-section-thank-you-message .dws-forms-thank-you-title {
+  text-align: center;
+  font-size: 1.5em;
+  line-height: 1.1667em;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.dws-forms-wrapper.dws-forms-section-thank-you-message .dws-forms-thank-you-message {
+  text-align: center;
+  line-height: 1.375em;
+  margin-bottom: 12px;
+}
+.dws-forms-wrapper.dws-forms-section-thank-you-message .dws-forms-thank-you-content-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 624px;
+  padding: 32px 10px 10px 10px;
+  margin-bottom: 16px;
+}
+.dws-forms-wrapper.dws-forms-section-thank-you-message .dws-forms-section {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.dws-forms-wrapper.dws-forms-section-thank-you-message .dws-forms-thank-you-notification-content-container {
+  padding: 10px 16px 24px 16px;
+}
+.dws-forms-wrapper.dws-forms-section-thank-you-message .dws-forms-vehicle-history-button-container {
+  align-items: flex-end;
+  align-self: stretch;
+  border-top: 1px solid #D1D1D1;
+  background: #FFF;
+  display: flex;
+  padding: 12px 16px;
+  justify-content: center;
+}
+.dws-forms-wrapper.dws-forms-section-thank-you-message .dws-forms-vehicle-history-button-container a {
+  align-items: center;
+  border-radius: 36px;
+  display: flex;
+  font-size: 0.875em;
+  justify-content: center;
+  line-height: 1.571;
+  padding: 8px 24px;
+}
+.dws-forms-text-vehicle-detail .dws-form-group.dws-forms-phone-number,
+.dws-forms-send-to-phone .dws-form-group.dws-forms-phone-number,
+.dws-forms-text-vehicle-detail .dws-form-group.dws-forms-cell-phone-number,
+.dws-forms-send-to-phone .dws-form-group.dws-forms-cell-phone-number,
+.dws-forms-text-vehicle-detail .dws-form-group.dws-forms-full-name,
+.dws-forms-send-to-phone .dws-form-group.dws-forms-full-name {
+  width: 100%;
+}
+.dropdown-list-of-vehicles-container {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+}
+.dropdown-list-of-vehicles-container ul.dropdown-list-of-vehicles {
+  max-height: 300px;
+  background: #fff;
+  width: 100%;
+  border: 1px solid #aeaeae;
+  overflow-y: auto;
+  display: none;
+  list-style: none;
+  padding: 0;
+}
+.dropdown-list-of-vehicles-container ul.dropdown-list-of-vehicles li {
+  cursor: pointer;
+}
+.dropdown-list-of-vehicles-container ul.dropdown-list-of-vehicles li .search-results-vehicle-container {
+  display: flex;
+}
+.dropdown-list-of-vehicles-container ul.dropdown-list-of-vehicles li .search-results-vehicle-container .search-results-vehicle-image {
+  width: 20%;
+  padding: 5px;
+}
+.dropdown-list-of-vehicles-container ul.dropdown-list-of-vehicles li .search-results-vehicle-container .search-results-vehicle-image img {
+  width: 100%;
+}
+.dropdown-list-of-vehicles-container ul.dropdown-list-of-vehicles li .search-results-vehicle-container .search-results-vehicle-details {
+  width: 80%;
+  padding: 5px;
+}
+.dropdown-list-of-vehicles-container ul.dropdown-list-of-vehicles li .search-results-vehicle-container .search-results-vehicle-details .search-results-vehicle-title {
+  font-weight: bold;
+}
+.dropdown-list-of-vehicles-container ul.dropdown-list-of-vehicles li .search-results-vehicle-container .search-results-vehicle-details .search-results-vehicle-options {
+  font-size: 12px;
+}
+.dropdown-list-of-vehicles-container ul.dropdown-list-of-vehicles li .search-results-vehicle-container .search-results-vehicle-details .search-results-vehicle-options .vehicle-column {
+  padding: 0;
+}
+.dropdown-list-of-vehicles-container ul.dropdown-list-of-vehicles li .search-results-vehicle-container .search-results-vehicle-details .search-results-vehicle-options .vehicle-column label {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.dropdown-list-of-vehicles-container ul.dropdown-list-of-vehicles li:nth-child(even) {
+  background-color: #f6f6f6;
+}
+.dropdown-list-of-vehicles-container ul.dropdown-list-of-vehicles li.search-string-no-results div {
+  padding: 10px;
+  color: red;
+  font-weight: bold;
+  border: 1px solid red;
+}
+.dropdown-list-of-vehicles-container .close-vehicle-dropdown-list {
+  text-decoration: underline;
+  float: right;
+  position: relative;
+  top: -10px;
+  cursor: pointer;
+  display: none;
+  background: #fff;
+  padding: 5px;
+  font-weight: 600;
+}
+.dropdown-list-of-vehicles-container .close-vehicle-dropdown-list.dropdown-displayed {
+  display: block !important;
+}
+.form-check-input.is-invalid,
+.was-validated .form-check-input:invalid {
+  box-shadow: 0px 0px 2px 1px red;
+}
+.dws-forms-active .was-validated .dws-forms-accept-terms .form-check-input.is-invalid,
+.dws-forms-active .was-validated .dws-forms-accept-terms .form-check-input:invalid {
+  box-shadow: 0px 0px 2px 1px #FF0000;
+  -webkit-box-shadow: 0px 0px 2px 1px red;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  border: 1px solid #C1C1C1;
+}
+.dws-forms-active .dws-forms-accept-terms .form-check-input {
+  width: 14px;
+  height: 14px;
+}
+.was-validated .form-check-input:invalid ~ .form-check-label {
+  color: #dc3545;
+}
+.pointer-none {
+  pointer-events: none;
+}
+body {
+  top: 0 !important;
+}
+body.notranslate .skiptranslate {
+  display: none;
+}
+.dws-forms-active .dws-forms-wrapper .dws-forms-section .dws-form-group .dws-references-remove-button {
+  color: #EA0000;
+}
+.dws-forms-wrapper .dws-forms-form-select:disabled,
+.dws-forms-section .dws-forms-form-control:disabled {
+  background-color: #e9ecef !important;
+}
+@media (min-width: 991px) {
+  .dws-forms-modal-dialog .dws-forms-wrapper .dws-forms-footer-section .dws-forms-footer-text p {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .dws-forms-modal-dialog .dws-forms-wrapper.dws-forms-credit-app .dws-forms-footer-section .dws-forms-footer-text p {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.dws-forms-delivery-details-zip-code-clearfix {
+  width: 10px;
+}
+.dws-forms-active .dws-forms-404-search-car-finder-form-wrapper {
+  max-width: 624px;
+  display: block;
+  margin: 0 auto;
+}
+.dws-forms-active .dws-forms-wrapper.was-validated .dws-field-and-icon-container .form-control.dws-forms-form-control:invalid,
+.dws-forms-active .dws-forms-wrapper.was-validated .dws-field-and-icon-container .form-select.dws-forms-form-select:invalid {
+  border-color: #dc3545;
+  padding-right: calc(1.5em + 0.75rem);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right calc(1.75em + 1.475rem) center;
+  background-size: calc(1em + 0.375rem) calc(1em + 0.375rem);
+}
+.dws-forms-active .dws-forms-wrapper.was-validated .dws-field-and-icon-container .form-control.dws-forms-form-control:valid,
+.dws-forms-active .dws-forms-wrapper.was-validated .dws-field-and-icon-container .form-select.dws-forms-form-select:valid {
+  background-image: none;
+}
+.dws-forms-active .dws-forms-wrapper.was-validated .form-control.dws-forms-form-control:valid,
+.dws-forms-active .dws-forms-wrapper.was-validated .form-select.dws-forms-form-select:valid {
+  background-image: none;
+}
+.dws-forms-legend-title {
+  font-size: 0.87em;
+}
+.dws-forms-section-legend-layout-2 {
+  max-width: 764px;
+}
+.services-container {
+  margin-top: 20px;
+}
+.dws-forms-wrapper .dws-forms-section .services-list-title {
+  font-size: 14px;
+  font-weight:400;
+} 
+.services-container .container {
+  width: 100%;
+}
+.dws-forms-row {
+  display: flex;
+  flex-flow: wrap;
+}
+.dws-forms-form-check {
+  display: flex;
+  gap: 10px;
+  align-items: start;
+}
+.dws-forms-active .was-validated .form-check-input:valid~.form-check-label {
+  color: #666;
+}
+.dws-forms-active .was-validated .form-check-input:valid {
+  border-color: #666;
+}
+.dws-forms-active .dws-forms-section.section-appointment {
+  margin-top: 10px;
+}
+.dws-forms-active .dws-forms-service-appointment.dws-forms-wrapper.was-validated .form-select.dws-forms-form-select:valid {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1em' viewBox='0 0 320 512'%3E%3Cstyle%3Esvg%7Bfill:%239C9C9C%7D%3C/style%3E%3Cpath d='M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z'/%3E%3C/svg%3E");
+}
+.dws-forms-active .dws-forms-wrapper.dws-forms-credit-app .dropdown-list-of-vehicles-container {
+  width: calc(100% - 16px);
+}
+.dws-forms-accordion-checker {
+  margin: 0.5em 0 0.5em 1.25rem;
+  font-size: 12px;
+}
+.dws-forms-section-title .dws_accordion_checker_label {
+  display: inline-block;
+  padding-left: 0.5em;
+  margin-top: 0.25em;
+  font-weight: 400;
+  color: #0038FF;
+}

@@ -1,0 +1,68 @@
+.dws-forms-wrapper .dws-forms-header-title,
+.dws-forms-wrapper .dws-forms-footer-text {
+  color: #000;
+}
+.dws-forms-wrapper .dws-forms-header-text,
+.dws-forms-wrapper .dws-forms-section-contact-information-header {
+  color: #333;
+}
+.dws-forms-wrapper .dws-forms-form-control {
+  border-radius: 0;
+  background-color: #F9F9F9;
+}
+.dws-forms-wrapper .dws-forms-footer-section {
+  /* default background; needs content level change to match theme background */
+  background: rgba(17, 17, 17, 0.025);
+}
+.dws-forms-wrapper .dws-forms-button-wrapper {
+  border-top: 1px solid #D1D1D1;
+}
+.dws-forms-wrapper .dws-readonly-field {
+  background-color: #eee;
+}
+.dws-forms-wrapper .dws-forms-section .dws-forms-checkbox-container .dws-forms-form-check-label {
+  color: #0038FF;
+}
+.dws-forms-wrapper .dws-forms-section .dws-previous-addresses-addmore-button,
+.dws-forms-wrapper .dws-forms-section .dws-additional-employment-addmore-button,
+.dws-forms-wrapper .dws-forms-section .dws-previous-employment-addmore-button,
+.dws-forms-wrapper .dws-forms-section .dws-references-addmore-button,
+.dws-forms-wrapper .dws-forms-section .dws-co-buyer-previous-addresses-addmore-button,
+.dws-forms-wrapper .dws-forms-section .dws-co-buyer-previous-employment-addmore-button {
+  color: #0038FF;
+}
+.dws-forms-wrapper .dws-forms-section .dws-previous-addresses-remove-button,
+.dws-forms-wrapper .dws-forms-section .dws-previous-employment-remove-button,
+.dws-forms-wrapper .dws-forms-section .dws-additional-employment-remove-button,
+.dws-forms-wrapper .dws-forms-section .dws-co-buyer-previous-addresses-remove-button,
+.dws-forms-wrapper .dws-forms-section .dws-co-buyer-previous-employment-remove-button {
+  color: #EA0000;
+}
+.dws-forms-wrapper .dws-forms-section .dws-forms-has-co-buyer-option .dws-forms-form-check-label {
+  color: #333333;
+}
+.dws-forms-wrapper .dws-forms-section .dws-time-field-container .dws-forms-form-control:disabled {
+  cursor: not-allowed;
+}
+.dws-forms-wrapper .dws-forms-icon-search-container label {
+  color: #333333;
+}
+.dws-forms-wrapper .form-control.dws-forms-form-control.text-weight-bold {
+  font-weight: 700;
+}
+.dws-forms-active .dws-forms-credit-app-layout-2-container .review-section .review-section-title {
+  color: #333333;
+}
+.dws-forms-active .dws-forms-wrapper .dws-forms-section .dws-forms-section-title,
+.dws-forms-active .dws-forms-wrapper .dws-forms-accordion-section .dws-forms-section-title {
+  color: #333333;
+}
+.dws-forms-active .upload-file-widget-containers {
+  background-color: transparent;
+}
+.dws-forms-active .upload-file-widget-containers .file-upload-container {
+  background-color: transparent;
+}
+.dws-forms-legend-title {
+  color: #888;
+}

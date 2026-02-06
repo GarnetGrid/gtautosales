@@ -1,0 +1,436 @@
+.dws-steps-tab-container .dws-forms-section-payment-confirmation-header {
+  text-align: center;
+}
+.dws-steps-tab-container .dws-nav-tabs-container {
+  display: flex;
+  justify-content: center;
+  padding: 0.5em 0;
+  margin-bottom: 1em;
+}
+.dws-steps-tab-container ul.nav-pills {
+  margin-left: 0;
+}
+.dws-steps-tab-container ul.nav-pills > li {
+  float: none;
+}
+.dws-steps-tab-container .nav-link {
+  display: block;
+}
+.dws-steps-tab-container .nav-pills > li.active > a,
+.dws-steps-tab-container .nav-pills .nav-link.active {
+  border-radius: 20px;
+  background-color: #CCCCCC;
+  color: #333;
+  font-size: 0.875em;
+  font-weight: 500;
+}
+.dws-steps-tab-container li.nav-item a {
+  color: #333;
+  font-size: 0.875em;
+  font-weight: 500;
+}
+.dws-steps-tab-container .dws-bhph-text-wrapper {
+  font-size: 0.75em;
+  line-height: 1.33333333;
+  font-weight: 400;
+  margin-bottom: 1em;
+  color: #333;
+}
+.dws-steps-tab-container .dws-deposit-text-wrapper {
+  color: #333;
+}
+.dws-steps-tab-container .dws-bhph-text-wrapper span {
+  font-weight: 500;
+}
+.dws-steps-tab-container .dws-nav-tabs-container .nav-item.first-step-item {
+  border-radius: 20px 0 0 20px;
+}
+.dws-steps-tab-container .dws-nav-tabs-container .nav-item.last-step-item {
+  border-radius: 0 20px 20px 0;
+}
+.dws-steps-tab-container .nav-pills > li + li {
+  margin-left: 0;
+}
+.dws-steps-tab-container .dws-forms-cards-container {
+  width: 100px;
+  display: inline-block;
+}
+.dws-steps-tab-container .dws-deposit-car-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+.dws-steps-tab-container .dws-deposit-car-details p {
+  color: #333;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.33333333;
+  /* 183.333% */
+  margin-bottom: 0;
+}
+.dws-steps-tab-container .dws-deposit-car-details span {
+  color: #333;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.33333333;
+}
+.dws-steps-tab-container .process-complete-page-container,
+.dws-steps-tab-container .failed-transaction-page-container {
+  padding: 5px 15px 20px 15px;
+  text-align: center;
+  color: #333;
+}
+.dws-steps-tab-container .process-complete-page-container h3,
+.dws-steps-tab-container .failed-transaction-page-container h3 {
+  font-weight: 400;
+}
+.dws-steps-tab-container .process-complete-page-container div.invoke-print-receipt,
+.dws-steps-tab-container .failed-transaction-page-container div.invoke-print-receipt {
+  background-color: #EA0000 !important;
+  color: #fff !important;
+  border-radius: 36px;
+}
+.dws-steps-tab-container .process-complete-page-container div.retry-bhph-transaction,
+.dws-steps-tab-container .failed-transaction-page-container div.retry-bhph-transaction {
+  background-color: #EA0000 !important;
+  color: #fff !important;
+  border-radius: 36px;
+}
+.dws-steps-tab-container .process-complete-page-container #process-complete-message,
+.dws-steps-tab-container .failed-transaction-page-container #process-complete-message {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #333;
+  margin-bottom: 20px;
+}
+.dws-forms-modal-bhph-overpayment .dws-forms-header-text-wrapper {
+  padding-left: 0;
+}
+.dws-forms-modal-bhph-overpayment .dws-forms-bhph-overpayment-actions-wrapper {
+  padding-left: 24px !important;
+}
+.dws-forms-modal-bhph-overpayment .dws-forms-bhph-overpayment-actions-wrapper .form-check {
+  margin-right: 20px;
+}
+.dws-forms-modal-bhph-overpayment .dws-forms-bhph-overpayment-actions-wrapper .form-check-label {
+  color: #333333;
+}
+.dws-forms-section-contact-billing-information .dws-form-group .dws-datepicker {
+  position: absolute !important;
+  top: auto !important;
+  left: auto !important;
+}
+.dws-forms-modal-bhph-confirm .dws-forms-modal-dialog {
+  max-width: 560px;
+}
+.dws-forms-modal-bhph-confirm .dws-forms-modal-dialog .dws-forms-header-section {
+  padding: 32px 20px 10px 20px;
+}
+.dws-forms-modal-bhph-confirm .dws-forms-modal-dialog .modal-title {
+  text-transform: unset !important;
+  width: 100%;
+}
+.dws-forms-modal-bhph-confirm {
+  padding-left: 0;
+}
+.dws-forms-modal-bhph-confirm .dws-forms-modal-dialog .confirmCancel {
+  color: #000;
+}
+.dws-forms-modal-bhph-confirm .dws-forms-modal-dialog p {
+  color: #000;
+}
+.dws-forms-modal-bhph-confirm .dws-forms-modal-dialog .btn-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+.dws-forms-modal-bhph-confirm .dws-forms-modal-dialog .btn-secondary {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+.dws-forms-modal-bhph-confirm .dws-forms-modal-dialog .modal-content {
+  display: block;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  position: relative;
+  top: 60px;
+}
+.dws-forms-modal-bhph-confirm .dws-forms-modal-dialog {
+  transform: translate(0, 0) !important;
+  margin-top: 0;
+}
+.dws-forms-section-contact-billing-information .form-label,
+.dws-forms-payment-confirmation-code .form-label {
+  font-size: 12px;
+  color: #333;
+}
+/* Refined Step Navigation Styling */
+.dws-nav-pills-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+.dws-nav-pills-container .nav-pills {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 0;
+}
+/* Subtle connection line between steps (desktop only) */
+.dws-nav-pills-container .nav-pills::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  right: 25%;
+  height: 1px;
+  background: #dee2e6;
+  z-index: 0;
+  transform: translateY(-50%);
+}
+@media (max-width: 767.98px) {
+  .dws-nav-pills-container .nav-pills::before {
+    display: none;
+  }
+}
+.dws-nav-pills-container .nav-pills .nav-link {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 8px;
+  margin: 0 4px;
+  border-radius: 18px;
+  background-color: #f8f9fa;
+  color: #6c757d;
+  border: 1px solid #e9ecef;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  font-size: 12px;
+  min-height: 36px;
+  width: 135px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.dws-nav-pills-container .nav-pills .nav-link:hover {
+  background-color: #e9ecef;
+  color: #495057;
+  text-decoration: none;
+}
+.dws-nav-pills-container .nav-pills .nav-link.active {
+  background-color: #6c757d;
+  color: white;
+  box-shadow: 0 2px 8px rgba(108, 117, 125, 0.2);
+}
+.dws-nav-pills-container .nav-pills .nav-link.completed {
+  background-color: #28a745;
+  color: white;
+  border-color: #28a745;
+}
+.dws-nav-pills-container .nav-pills .nav-link .step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #495057;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 11px;
+  margin-right: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+.dws-nav-pills-container .nav-pills .nav-link:not(.active) .step-number {
+  background-color: #ffffff;
+  color: #495057;
+  border-color: #dee2e6;
+}
+.dws-nav-pills-container .nav-pills .nav-link.active .step-number {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #212529;
+  border-color: rgba(0, 0, 0, 0.15);
+  font-weight: 700;
+}
+.dws-nav-pills-container .nav-pills .nav-link.completed .step-number {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #212529;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+.dws-nav-pills-container .nav-pills .nav-link.completed .step-number:after {
+  content: "✓";
+  position: absolute;
+  font-size: 10px;
+  font-weight: 700;
+}
+.dws-nav-pills-container .nav-pills .nav-link .step-text,
+.dws-nav-pills-container .nav-pills .nav-link .step-text-mobile {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.2;
+}
+/* Mobile optimizations - Vertical Layout */
+@media (max-width: 767.98px) {
+  .dws-nav-pills-container {
+    margin-bottom: 15px;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  .dws-nav-pills-container .nav-pills {
+    flex-direction: column;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+  }
+  .dws-nav-pills-container .nav-pills .nav-link {
+    flex-shrink: 0;
+    padding: 10px 16px;
+    margin: 0;
+    width: auto;
+    max-width: 200px;
+    margin: 0 auto;
+    justify-content: flex-start;
+    min-height: 44px;
+    font-size: 12px;
+    border-radius: 22px;
+    text-align: left;
+  }
+  .dws-nav-pills-container .nav-pills .nav-link .step-number {
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+  .dws-nav-pills-container .nav-pills .nav-link .step-text-mobile {
+    display: block !important;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .dws-nav-pills-container .nav-pills .nav-link .step-text {
+    display: none !important;
+  }
+}
+/* Small mobile devices - Compact Vertical */
+@media (max-width: 480px) {
+  .dws-nav-pills-container {
+    padding: 0 5px;
+    box-sizing: border-box;
+  }
+  .dws-nav-pills-container .nav-pills {
+    gap: 6px;
+  }
+  .dws-nav-pills-container .nav-pills .nav-link {
+    padding: 8px 14px;
+    max-width: 180px;
+    min-height: 40px;
+    font-size: 11px;
+    border-radius: 20px;
+  }
+  .dws-nav-pills-container .nav-pills .nav-link .step-number {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+    margin-right: 8px;
+  }
+  .dws-nav-pills-container .nav-pills .nav-link .step-text-mobile {
+    font-size: 11px;
+  }
+}
+/* Tablet optimizations */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .dws-nav-pills-container .nav-pills .nav-link {
+    padding: 5px 6px;
+    margin: 0 2px;
+    min-height: 34px;
+    width: 135px;
+    font-size: 11px;
+    justify-content: center;
+  }
+  .dws-nav-pills-container .nav-pills .nav-link .step-text {
+    display: block !important;
+    font-size: 11px;
+  }
+  .dws-nav-pills-container .nav-pills .nav-link .step-text-mobile {
+    display: none !important;
+  }
+  .dws-nav-pills-container .nav-pills .nav-link .step-number {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+    margin-right: 5px;
+  }
+}
+/* Desktop optimizations */
+@media (min-width: 992px) {
+  .dws-nav-pills-container .nav-pills .nav-link {
+    width: 135px;
+    justify-content: center;
+  }
+  .dws-nav-pills-container .nav-pills .nav-link .step-text {
+    display: block !important;
+  }
+  .dws-nav-pills-container .nav-pills .nav-link .step-text-mobile {
+    display: none !important;
+  }
+}
+/* Focus states for accessibility */
+.dws-nav-pills-container .nav-pills .nav-link:focus {
+  outline: 2px solid rgba(0, 123, 255, 0.5);
+  outline-offset: 1px;
+}
+/* Disabled state styling */
+.dws-nav-pills-container .nav-pills .nav-item.disabled .nav-link {
+  cursor: not-allowed;
+}
+.dws-nav-pills-container .nav-pills .nav-item.disabled .nav-link:hover {
+  background-color: #f8f9fa;
+  color: #6c757d;
+}
+/* Additional iframe and constrained container support */
+iframe .dws-nav-pills-container,
+.constrained-container .dws-nav-pills-container {
+  padding: 0 20px !important;
+}
+@media (max-width: 767.98px) {
+  iframe .dws-nav-pills-container,
+  .constrained-container .dws-nav-pills-container {
+    padding: 0 15px !important;
+  }
+  iframe .dws-nav-pills-container .nav-pills,
+  .constrained-container .dws-nav-pills-container .nav-pills {
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+  iframe .dws-nav-pills-container .nav-pills .nav-link,
+  .constrained-container .dws-nav-pills-container .nav-pills .nav-link {
+    width: auto !important;
+    max-width: 200px !important;
+    margin: 0 auto !important;
+    justify-content: flex-start !important;
+  }
+}
+@media (max-width: 480px) {
+  iframe .dws-nav-pills-container,
+  .constrained-container .dws-nav-pills-container {
+    padding: 0 10px !important;
+  }
+  iframe .dws-nav-pills-container .nav-pills .nav-link,
+  .constrained-container .dws-nav-pills-container .nav-pills .nav-link {
+    max-width: 180px !important;
+  }
+}

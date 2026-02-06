@@ -1,0 +1,75 @@
+.dws-forms-text-us .dws-forms-section-contact-information .dws-forms-cell-phone-number {
+  width: 100%;
+}
+.dws-forms-section-contact-information .input-group-text {
+  border-left: 0;
+  border-right: solid 1px #C1C1C1;
+  cursor: pointer;
+}
+.dws-forms-section-contact-information .input-group-text.input-group-payoff-amount {
+  border-right: 0;
+}
+.dws-forms-section-contact-information .dws-form-group .dws-forms-timepicker {
+  caret-color: transparent;
+  cursor: pointer;
+}
+.dws-forms-section-contact-information .dws-form-group .dws-datepicker {
+  /* needs to override the datepicker inline styles */
+  position: absolute !important;
+  top: auto !important;
+  left: auto !important;
+}
+.dws-forms-section-contact-information .dws-forms-contact-preference {
+  align-items: center;
+  display: flex;
+  gap: 24px;
+}
+.dws-forms-section-contact-information .dws-forms-contact-preference label {
+  color: #666;
+  font-size: 0.875em;
+  font-weight: 300;
+  line-height: 1.57142857;
+  margin-bottom: 0;
+}
+.dws-forms-section-contact-information .dws-forms-contact-preference .form-check {
+  align-items: center;
+  color: #666;
+  display: flex;
+  gap: 8px;
+  font-size: 0.875em;
+  font-weight: 300;
+  line-height: 1.57142857;
+  text-align: center;
+}
+.dws-forms-section-contact-information .dws-forms-contact-preference .form-check input {
+  border: 1px solid #CCC;
+  border-radius: 0;
+  color: #ccc;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.dws-forms-section-contact-information .dws-forms-comments.dws-form-group-full-width {
+  margin-bottom: 24px;
+}
+@media screen and (max-width: 567px) {
+  .dws-forms-section-contact-information .dws-forms-contact-preference {
+    align-items: stretch;
+    align-content: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-start;
+  }
+  .dws-forms-section-contact-information .dws-forms-contact-preference label {
+    flex-basis: 100%;
+  }
+  .dws-forms-section-contact-information .dws-forms-contact-preference .form-check {
+    flex-grow: 0.1;
+  }
+}
+.dws-forms-section-delivery-details .dws-form-group .dws-datepicker {
+  /* needs to override the datepicker inline styles */
+  position: absolute !important;
+  top: auto !important;
+  left: auto !important;
+}
