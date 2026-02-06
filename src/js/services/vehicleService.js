@@ -11,7 +11,7 @@ class VehicleService {
 
     async init() {
         if (!USE_MOCK_DATA) {
-            // TODO: Initialize Supabase Client here when config is ready
+            // TODO: Initialize Supabase Client here when config is ready (Phase 4)
             // import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
             // this.supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
             console.log('Supabase mode enabled (Pending Configuration)');

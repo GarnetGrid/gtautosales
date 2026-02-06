@@ -1,50 +1,40 @@
 # GT Auto Sales Website
 
-Premium automotive dealership website rebranded from legacy "Yes Motors".
-Built with efficient, semantic HTML5, CSS3 (Custom Properties), and Modular JavaScript.
+A premium automotive dealership website built with modern HTML5, CSS3, and JavaScript.
 
 ## Features
-- **Dynamic Inventory**: Client-side rendering of vehicle inventory with extensive filters (Make, Type, Price, Year).
-- **Service Booking**: Dedicated page for services with direct booking integration.
-- **Lead Generation**: "Request Info" and "Finance Application" forms pre-filled with vehicle data.
-- **Responsive Design**: Mobile-first approach with sidebar filters and touch-friendly navigation.
-- **Compliance**: GDPR-ready cookie consent and CSP security headers.
+-   **Dynamic Inventory:** Browse vehicles with advanced filtering (Make, Type, Price).
+-   **Vehicle Details:** Comprehensive specs, gallery, and financing calculation integration.
+-   **Admin Dashboard:** `/admin.html` (Password: `admin123`) for inventory management.
+-   **Modular Architecture:** Built with ES Modules and a `VehicleService` layer for data abstraction.
+-   **Mobile First:** Fully responsive design for all devices.
 
-## Development
+## Setup & Run
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/GarnetGrid/gtautosales.git
+    cd gtautosales
+    ```
+2.  **Run locally:**
+    Since the project uses ES Modules, you must run it with a local server.
+    ```bash
+    # Python 3
+    python3 -m http.server 8080 -d src
+    
+    # Node.js (http-server)
+    npx http-server src
+    ```
+3.  **Visit:** `http://localhost:8080`
 
-### Prerequisites
-- Python 3 (for local server) or any static file server.
+## Admin Access
+-   URL: `/admin.html`
+-   Mock Password: `admin123`
+-   *Note: Changes in Admin are currently saved to memory (Mock Mode) and will reset on refresh.*
 
-### Local Setup
-1. Clone the repository.
-   ```bash
-   git clone https://github.com/GarnetGrid/gtautosales.git
-   ```
-2. Navigate to the source directory.
-   ```bash
-   cd src
-   ```
-3. Start a local server.
-   ```bash
-   python3 -m http.server 8080
-   ```
-4. Visit `http://localhost:8080` in your browser.
+## Future Roadmap (Phase 4)
+-   Integrate Supabase for persistent database storage.
+-   Enable live Row Level Security (RLS) for Admin.
+-   Deploy Edge Functions for secure logic.
 
-## Deployment
-This site is designed to be hosted on any static hosting provider.
-
-### GitHub Pages
-1. Push the `src` folder to a GitHub repository.
-2. Go to **Settings > Pages**.
-3. Select the `main` branch and `/src` folder as the source.
-
-### Netlify / Vercel
-1. Link your repository.
-2. Set the *Publish directory* to `src`.
-3. No build command required.
-
-## Structure
-- `src/index.html`: Homepage.
-- `src/css/`: Stylesheets (variables, layout, components).
-- `src/js/`: Logic (main.js handles all shared and page-specific logic).
-- `src/assets/`: Images and static resources.
+## License
+Proprietary - GT Auto Sales
