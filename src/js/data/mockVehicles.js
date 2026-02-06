@@ -25,7 +25,7 @@ export const MOCK_VEHICLES = [
         price: 112500,
         mileage: 8200,
         type: "Sedan",
-        image: "assets/car2.jpg",
+        image: "assets/amg-gt63.png",
         featured: true,
         description: "Luxury meets performance. The AMG GT 63 4-Door Coupe offers supercar performance with limousine comfort. Features handcrafted V8 biturbo power.",
         specs: {
@@ -43,7 +43,7 @@ export const MOCK_VEHICLES = [
         price: 220000,
         mileage: 1200,
         type: "Sports",
-        image: "assets/car3.jpg",
+        image: "assets/porsche-911.png",
         featured: true,
         description: "Born in Flacht. The 911 GT3 offers a naturally aspirated 4.0L engine that revs to 9,000 RPM. The purest connection between driver and road.",
         specs: {
