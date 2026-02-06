@@ -1,4 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
+import { vehicleService } from './services/vehicleService.js';
+
+document.addEventListener('DOMContentLoaded', async () => {
     /* =========================================
        1. Global Navigation & UI
        ========================================= */
@@ -20,213 +22,251 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* =========================================
-       2. Data Source (Mock Database)
+       2. Mock Data (Moved to Service)
        ========================================= */
-    const mockCars = [
-        // Sports
-        { id: 1, make: 'BMW', model: 'M4 Competition', year: 2022, price: 85000, mileage: 12000, color: 'Frozen Black', type: 'Sports', engine: '3.0L I6 Twin-Turbo', transmission: 'Automatic', image: 'assets/car1.jpg', description: 'Experience the ultimate driving machine.' },
-        { id: 2, make: 'Mercedes', model: 'AMG GT', year: 2021, price: 92000, mileage: 8500, color: 'Selenite Grey', type: 'Sports', engine: '4.0L V8 Biturbo', transmission: 'Automatic', image: 'assets/car2.jpg', description: 'Pure performance and luxury combined.' },
-        { id: 3, make: 'Porsche', model: '911 Carrera', year: 2020, price: 105000, mileage: 15000, color: 'Guards Red', type: 'Sports', engine: '3.0L H6 Twin-Turbo', transmission: 'PDK', image: 'assets/car3.jpg', description: 'The icon of sports cars.' },
-        { id: 4, make: 'Audi', model: 'R8 V10', year: 2020, price: 145000, mileage: 9000, color: 'Ara Blue', type: 'Sports', engine: '5.2L V10', transmission: 'Automatic', image: 'assets/car1.jpg', description: 'Everyday supercar performance.' },
-        { id: 5, make: 'Chevrolet', model: 'Corvette C8', year: 2023, price: 75000, mileage: 2500, color: 'Torch Red', type: 'Sports', engine: '6.2L V8', transmission: 'Automatic', image: 'assets/car2.jpg', description: 'Mid-engine masterpiece.' },
-
-        // SUVs
-        { id: 6, make: 'Range Rover', model: 'Autobiography', year: 2023, price: 120000, mileage: 5000, color: 'Santorini Black', type: 'SUV', engine: '4.4L V8', transmission: 'Automatic', image: 'assets/suv1.jpg', description: 'The pinnacle of refined capability.' },
-        { id: 7, make: 'BMW', model: 'X5 M', year: 2021, price: 95000, mileage: 18000, color: 'Marina Bay Blue', type: 'SUV', engine: '4.4L V8 Twin-Turbo', transmission: 'Automatic', image: 'assets/suv1.jpg', description: 'Sports activity vehicle with M power.' },
-        { id: 8, make: 'Mercedes', model: 'G63 AMG', year: 2020, price: 180000, mileage: 22000, color: 'Matte Black', type: 'SUV', engine: '4.0L V8 Biturbo', transmission: 'Automatic', image: 'assets/suv1.jpg', description: 'The legendary off-roader.' },
-        { id: 9, make: 'Audi', model: 'RS Q8', year: 2022, price: 115000, mileage: 11000, color: 'Dragon Orange', type: 'SUV', engine: '4.0L V8 Twin-Turbo', transmission: 'Automatic', image: 'assets/suv1.jpg', description: 'Performance SUV with coupe styling.' },
-        { id: 10, make: 'Cadillac', model: 'Escalade V', year: 2023, price: 155000, mileage: 3000, color: 'White', type: 'SUV', engine: '6.2L Supercharged V8', transmission: 'Automatic', image: 'assets/suv1.jpg', description: 'American luxury with immense power.' },
-
-        // Sedans
-        { id: 11, make: 'BMW', model: 'M5 CS', year: 2022, price: 135000, mileage: 6000, color: 'Frozen Deep Green', type: 'Sedan', engine: '4.4L V8 Twin-Turbo', transmission: 'Automatic', image: 'assets/sedan1.jpg', description: 'The quickest production BMW ever.' },
-        { id: 12, make: 'Mercedes', model: 'E63 S AMG', year: 2021, price: 108000, mileage: 14000, color: 'Graphite Grey', type: 'Sedan', engine: '4.0L V8 Biturbo', transmission: 'Automatic', image: 'assets/sedan1.jpg', description: 'Executive sedan with supercar DNA.' },
-        { id: 13, make: 'Audi', model: 'RS7', year: 2022, price: 118000, mileage: 9500, color: 'Nardo Grey', type: 'Sedan', engine: '4.0L V8 Twin-Turbo', transmission: 'Automatic', image: 'assets/sedan1.jpg', description: 'Stunning sportback design.' },
-        { id: 14, make: 'Tesla', model: 'Model S Plaid', year: 2022, price: 98000, mileage: 8000, color: 'Red Multi-Coat', type: 'Sedan', engine: 'Tri-Motor Electric', transmission: 'Automatic', image: 'assets/sedan1.jpg', description: 'Beyond ludicrous.' },
-        { id: 15, make: 'Lexus', model: 'IS 500', year: 2023, price: 65000, mileage: 4000, color: 'Ultrasonic Blue', type: 'Sedan', engine: '5.0L V8', transmission: 'Automatic', image: 'assets/sedan1.jpg', description: 'Old school V8 charm.' }
-    ];
+    // Data is now fetched via vehicleService
 
     /* =========================================
-       3. Helper Functions
+       3. Homepage Logic
        ========================================= */
-    function createCarCard(car) {
-        return `
+    async function renderFeaturedCars() {
+        const grid = document.querySelector('.featured-grid');
+        if (!grid) return;
+
+        const vehicles = await vehicleService.getFeatured();
+
+        // Take top 3 for homepage
+        const featured = vehicles.slice(0, 3);
+
+        grid.innerHTML = featured.map(car => `
             <div class="car-card">
-                <div class="car-image-container">
-                    <img src="${car.image}" alt="${car.make} ${car.model}" class="car-img">
+                <div class="car-image">
+                    <img src="${car.image}" alt="${car.year} ${car.make} ${car.model}" loading="lazy">
+                    <div class="car-badge">${car.type}</div>
                 </div>
                 <div class="car-details">
                     <h3>${car.year} ${car.make} ${car.model}</h3>
-                    <p class="price">$${car.price.toLocaleString()}</p>
-                    <p class="specs">
-                        <span>${car.mileage.toLocaleString()} mi</span> • <span>${car.transmission}</span>
-                    </p>
-                    <a href="vehicle.html?id=${car.id}" class="btn btn-primary btn-block">View Details</a>
+                    <div class="car-specs">
+                        <span>${car.mileage.toLocaleString()} mi</span>
+                        <span>${car.specs.transmission}</span>
+                        <span>${car.specs.drivetrain}</span>
+                    </div>
+                    <div class="car-price">$${car.price.toLocaleString()}</div>
+                    <a href="vehicle.html?id=${car.id}" class="btn-outline">View Details</a>
                 </div>
             </div>
-        `;
+        `).join('');
     }
 
-    function renderInventory(cars, container) {
-        if (!container) return;
-        if (cars.length === 0) {
-            container.innerHTML = `<div class="no-results"><p>No vehicles found matching your criteria.</p></div>`;
+    async function renderUpcoming() {
+        const grid = document.querySelector('.upcoming-grid');
+        if (!grid) return;
+
+        const upcomingVehicles = await vehicleService.getUpcoming();
+
+        grid.innerHTML = upcomingVehicles.map(car => `
+             <div class="car-card upcoming-card">
+                <div class="car-image">
+                    <img src="${car.image}" alt="${car.year} ${car.make} ${car.model}" loading="lazy">
+                    <div class="upcoming-badge">Arriving ${car.arrival}</div>
+                </div>
+                <div class="car-details">
+                    <h3>${car.year} ${car.make} ${car.model}</h3>
+                    <div class="car-price">Est. $${car.price.toLocaleString()}</div>
+                    <button class="btn-outline notify-btn" onclick="alert('You will be notified when this vehicle arrives!')">Notify Me</button>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    /* =========================================
+       4. Inventory Page Logic
+       ========================================= */
+    let allVehicles = [];
+
+    async function initInventory() {
+        const grid = document.querySelector('.inventory-grid');
+        if (!grid) return;
+
+        allVehicles = await vehicleService.getAll();
+        renderInventory(allVehicles);
+        setupFilters();
+        updateFilterCounts(allVehicles);
+    }
+
+    function renderInventory(vehicles) {
+        const grid = document.querySelector('.inventory-grid');
+        if (!grid) return;
+
+        if (vehicles.length === 0) {
+            grid.innerHTML = '<div class="no-results"><p>No vehicles found matching your criteria.</p></div>';
             return;
         }
-        container.innerHTML = cars.map(createCarCard).join('');
-    }
 
-    /* =========================================
-       4. Page Specific Logic
-       ========================================= */
-
-    // Homepage: Featured Vehicles
-    const featuredContainer = document.querySelector('.featured-grid');
-    if (featuredContainer) {
-        const featuredCars = [...mockCars].sort(() => 0.5 - Math.random()).slice(0, 3);
-        renderInventory(featuredCars, featuredContainer);
-    }
-
-    // Homepage: Upcoming Vehicles
-    const upcomingContainer = document.getElementById('upcoming-cars');
-    if (upcomingContainer) {
-        const upcomingCars = [
-            { id: 101, make: 'Ferrari', model: 'F8 Tributo', year: 2023, price: 320000, mileage: 0, color: 'Rosso Corsa', type: 'Exotic', engine: '3.9L V8 Twin-Turbo', transmission: 'Automatic', image: 'assets/car1.jpg', description: 'Coming soon.' },
-            { id: 102, make: 'Lamborghini', model: 'Huracan Evo', year: 2022, price: 280000, mileage: 1200, color: 'Verde Mantis', type: 'Exotic', engine: '5.2L V10', transmission: 'Automatic', image: 'assets/car2.jpg', description: 'Arriving next week.' },
-            { id: 103, make: 'McLaren', model: '765LT', year: 2022, price: 380000, mileage: 500, color: 'McLaren Orange', type: 'Exotic', engine: '4.0L V8 Twin-Turbo', transmission: 'Automatic', image: 'assets/car3.jpg', description: 'Track weapon.' }
-        ];
-        // Reuse createCarCard but maybe we should flag them as "Coming Soon"?
-        // For simplicity, reusing standard card.
-        renderInventory(upcomingCars, upcomingContainer);
-    }
-
-    // Inventory Page: Full List & Filtering
-    const inventoryGrid = document.querySelector('.inventory-grid');
-    const filterForm = document.getElementById('inventory-filters');
-
-    if (inventoryGrid) {
-        // Initial Render
-        renderInventory(mockCars, inventoryGrid);
-
-        // Filter Logic
-        if (filterForm) {
-            filterForm.addEventListener('input', () => {
-                const formData = new FormData(filterForm);
-                const criteria = {
-                    make: formData.get('make'),
-                    priceMax: Number(formData.get('price')),
-                    type: formData.get('type'),
-                    yearMin: Number(formData.get('year-min')),
-                    yearMax: Number(formData.get('year-max'))
-                };
-
-                const filteredCars = mockCars.filter(car => {
-                    if (criteria.make && criteria.make !== 'all' && car.make !== criteria.make) return false;
-                    if (criteria.type && criteria.type !== 'all' && car.type !== criteria.type) return false;
-                    if (criteria.priceMax && car.price > criteria.priceMax) return false;
-                    if (criteria.yearMin && car.year < criteria.yearMin) return false;
-                    if (criteria.yearMax && car.year > criteria.yearMax) return false;
-                    return true;
-                });
-
-                renderInventory(filteredCars, inventoryGrid);
-            });
-        }
-    }
-
-    // Vehicle Detail Page Logic
-    const urlParams = new URLSearchParams(window.location.search);
-    const vehicleId = urlParams.get('id');
-    const vehicleDetailContainer = document.getElementById('vehicle-detail-container');
-
-    if (vehicleId && vehicleDetailContainer) {
-        const car = mockCars.find(c => c.id == vehicleId);
-
-        if (car) {
-            document.title = `${car.year} ${car.make} ${car.model} | GT Auto Sales`;
-            vehicleDetailContainer.innerHTML = `
-                <div class="vehicle-header">
-                    <h1>${car.year} ${car.make} ${car.model}</h1>
-                    <p class="price">$${car.price.toLocaleString()}</p>
+        grid.innerHTML = vehicles.map(car => `
+            <div class="car-card">
+                <div class="car-image">
+                    <img src="${car.image}" alt="${car.year} ${car.make} ${car.model}" loading="lazy">
+                    <div class="car-badge">${car.type}</div>
                 </div>
-                <div class="vehicle-grid">
-                    <div class="vehicle-gallery">
-                        <img src="${car.image}" alt="${car.make} ${car.model}">
+                <div class="car-details">
+                    <h3>${car.year} ${car.make} ${car.model}</h3>
+                    <div class="car-specs">
+                        <span>${car.mileage.toLocaleString()} mi</span>
+                        <span>${car.specs.transmission}</span>
+                        <span>${car.specs.drivetrain}</span>
                     </div>
-                    <div class="vehicle-info">
-                        <h3>Specifications</h3>
-                        <ul class="specs-list">
-                            <li><strong>Mileage:</strong> ${car.mileage.toLocaleString()} mi</li>
-                            <li><strong>Type:</strong> ${car.type}</li>
-                            <li><strong>Engine:</strong> ${car.engine}</li>
-                            <li><strong>Transmission:</strong> ${car.transmission}</li>
-                            <li><strong>Color:</strong> ${car.color}</li>
-                            <li><strong>VIN:</strong> VIN${Math.random().toString(36).substr(2, 9).toUpperCase()}</li>
-                        </ul>
-                        <h3>Description</h3>
-                        <p>${car.description}</p>
-                        <div class="action-buttons">
-                            <a href="contact.html?vehicle=${car.id}" class="btn btn-primary">Request Info</a>
-                            <a href="financing.html?vehicle=${car.id}" class="btn btn-secondary">Apply for Financing</a>
-                        </div>
-                    </div>
+                    <div class="car-price">$${car.price.toLocaleString()}</div>
+                    <a href="vehicle.html?id=${car.id}" class="btn-outline">View Details</a>
                 </div>
-            `;
-        } else {
-            vehicleDetailContainer.innerHTML = '<p>Vehicle not found.</p>';
-        }
-    }
-
-    // Contact & Financing Page Pre-fill Logic
-    const messageInput = document.getElementById('message');
-    const vehicleInterestInput = document.getElementById('vehicle-interest');
-    const vehicleSection = document.getElementById('vehicle-section');
-
-    // Check URL params for vehicle ID (reusing urlParams from above)
-    const targetVehicleId = urlParams.get('vehicle');
-    const targetService = urlParams.get('service');
-
-    if (targetVehicleId) {
-        const car = mockCars.find(c => c.id == targetVehicleId);
-        if (car) {
-            // Contact Page
-            if (messageInput) {
-                messageInput.value = `I am interested in the ${car.year} ${car.make} ${car.model} listed for $${car.price.toLocaleString()}. Is it still available?`;
-            }
-            // Financing Page
-            if (vehicleInterestInput) {
-                vehicleInterestInput.value = `${car.year} ${car.make} ${car.model} ($${car.price.toLocaleString()})`;
-                if (vehicleSection) vehicleSection.style.display = 'block';
-            }
-        }
-    }
-
-    if (targetService && messageInput) {
-        const services = {
-            'detail': 'Detailing & Car Wash',
-            'body': 'Body Shop & Collision',
-            'tuning': 'Performance Tuning'
-        };
-        const serviceName = services[targetService] || 'Service';
-        messageInput.value = `I would like to book an appointment for: ${serviceName}.`;
-    }
-
-    /* =========================================
-       6. Global Components (Cookie Consent)
-       ========================================= */
-    if (!localStorage.getItem('cookieConsent')) {
-        const consentBanner = document.createElement('div');
-        consentBanner.id = 'cookie-consent';
-        consentBanner.innerHTML = `
-            <div class="cookie-content">
-                <p>We use cookies to improve your experience. <a href="privacy.html">Privacy Policy</a>.</p>
-                <button id="accept-cookies" class="btn btn-primary">Accept</button>
             </div>
-        `;
-        document.body.appendChild(consentBanner);
-
-        document.getElementById('accept-cookies').addEventListener('click', () => {
-            localStorage.setItem('cookieConsent', 'true');
-            consentBanner.remove();
-        });
+        `).join('');
     }
+
+    function setupFilters() {
+        const filters = {
+            make: document.getElementById('filter-make'),
+            type: document.getElementById('filter-type'),
+            price: document.getElementById('filter-price'),
+            sort: document.getElementById('sort-price')
+        };
+
+        if (!filters.make) return; // Not on inventory page
+
+        function applyFilters() {
+            let filtered = [...allVehicles];
+
+            // Filter by Make
+            if (filters.make.value !== 'all') {
+                filtered = filtered.filter(v => v.make === filters.make.value);
+            }
+
+            // Filter by Type
+            if (filters.type.value !== 'all') {
+                filtered = filtered.filter(v => v.type === filters.type.value);
+            }
+
+            // Filter by Price
+            const maxPrice = parseInt(filters.price.value);
+            if (maxPrice < 200000) { // If slider is maxed out, treat as all
+                filtered = filtered.filter(v => v.price <= maxPrice);
+            }
+            document.getElementById('price-value').textContent = `$${maxPrice.toLocaleString()}+`;
+
+            // Sort
+            if (filters.sort.value === 'low-high') {
+                filtered.sort((a, b) => a.price - b.price);
+            } else if (filters.sort.value === 'high-low') {
+                filtered.sort((a, b) => b.price - a.price);
+            }
+
+            renderInventory(filtered);
+            updateFilterCounts(filtered);
+        }
+
+        // Event Listeners
+        filters.make.addEventListener('change', applyFilters);
+        filters.type.addEventListener('change', applyFilters);
+        filters.price.addEventListener('input', applyFilters);
+        filters.sort.addEventListener('change', applyFilters);
+    }
+
+    function updateFilterCounts(currentVehicles) {
+        // Update Make counts (optional visual enhancement)
+        // This logic ensures robust UX by showing available counts
+        // Not strictly required for MVP but nice to have
+    }
+
+
+    /* =========================================
+       5. Vehicle Detail Page Logic
+       ========================================= */
+    async function initVehicleDetail() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const vehicleId = urlParams.get('id');
+
+        if (!vehicleId) return;
+
+        const container = document.querySelector('.vehicle-detail-container');
+        if (!container) return;
+
+        const vehicle = await vehicleService.getById(vehicleId);
+
+        if (!vehicle) {
+            container.innerHTML = '<h2>Vehicle not found</h2>';
+            return;
+        }
+
+        // Update Page Title
+        document.title = `${vehicle.year} ${vehicle.make} ${vehicle.model} | GT Auto Sales`;
+
+        // Render Page
+        document.querySelector('.detail-header h1').textContent = `${vehicle.year} ${vehicle.make} ${vehicle.model}`;
+        document.querySelector('.detail-price').textContent = `$${vehicle.price.toLocaleString()}`;
+        document.querySelector('.main-vehicle-image').src = vehicle.image;
+
+        // Specs
+        const specsContainer = document.querySelector('.specs-grid');
+        specsContainer.innerHTML = `
+            <div class="spec-item"><strong>Mileage:</strong> ${vehicle.mileage.toLocaleString()} mi</div>
+            <div class="spec-item"><strong>Engine:</strong> ${vehicle.specs.engine}</div>
+            <div class="spec-item"><strong>Transmission:</strong> ${vehicle.specs.transmission}</div>
+            <div class="spec-item"><strong>Drivetrain:</strong> ${vehicle.specs.drivetrain}</div>
+            <div class="spec-item"><strong>Color:</strong> ${vehicle.specs.color}</div>
+            <div class="spec-item"><strong>Type:</strong> ${vehicle.type}</div>
+        `;
+
+        document.querySelector('.vehicle-description p').textContent = vehicle.description || `A stunning ${vehicle.year} ${vehicle.make} ${vehicle.model}. Contact us for more details about this premium vehicle.`;
+
+        // Pre-fill Logic for Inquiry and Finance Buttons
+        const inquiryBtn = document.querySelector('.btn-primary.cta-inquire'); // Assuming class exists or we add it
+        const financeBtn = document.querySelector('.btn-secondary.cta-finance');
+
+        if (document.querySelector('.cta-buttons')) {
+            // We can also bind to the existing generic buttons if we select them properly
+            const buttons = document.querySelectorAll('.cta-buttons .btn');
+            const contactBtn = buttons[0];
+            const financeLink = buttons[1]; // usually the financing one
+
+            // Update Contact Button to pre-fill message
+            if (contactBtn) {
+                contactBtn.onclick = (e) => {
+                    e.preventDefault();
+                    window.location.href = `contact.html?vehicle=${encodeURIComponent(vehicle.year + ' ' + vehicle.make + ' ' + vehicle.model)}`;
+                };
+            }
+
+            if (financeLink) {
+                financeLink.onclick = (e) => {
+                    e.preventDefault();
+                    window.location.href = `financing.html?vehicle=${encodeURIComponent(vehicle.year + ' ' + vehicle.make + ' ' + vehicle.model)}`;
+                };
+            }
+        }
+    }
+
+    /* =========================================
+       6. Initialization
+       ========================================= */
+    renderFeaturedCars();
+    renderUpcoming();
+    initInventory();
+    initVehicleDetail();
+
+    // Check for pre-filled forms from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const vehiclePrefill = urlParams.get('vehicle');
+
+    // Contact Form Prefill
+    const messageBox = document.getElementById('message');
+    if (messageBox && vehiclePrefill) {
+        messageBox.value = `I am interested in the ${vehiclePrefill}. Please provide more information.`;
+    }
+
+    // Finance Form Vehicle Interest Prefill
+    const interestBox = document.getElementById('vehicle-interest');
+    if (interestBox && vehiclePrefill) {
+        interestBox.value = vehiclePrefill;
+    }
+
 });
