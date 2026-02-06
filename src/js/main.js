@@ -4,21 +4,25 @@ document.addEventListener('DOMContentLoaded', async () => {
     /* =========================================
        1. Global Navigation & UI
        ========================================= */
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navList = document.querySelector('.nav-list');
+    function initMobileMenu() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navList = document.querySelector('.nav-list');
 
-    if (menuToggle && navList) {
-        menuToggle.addEventListener('click', () => {
-            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-            menuToggle.setAttribute('aria-expanded', !isExpanded);
-            navList.classList.toggle('active');
-        });
+        if (menuToggle && navList) {
+            menuToggle.addEventListener('click', () => {
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                menuToggle.setAttribute('aria-expanded', !isExpanded);
+                navList.classList.toggle('active');
+            });
+        }
     }
 
     // Dynamic Copyright Year
-    const copyrightYear = document.querySelector('.footer-bottom p');
-    if (copyrightYear) {
-        copyrightYear.innerHTML = `&copy; ${new Date().getFullYear()} GT Auto Sales. All rights reserved.`;
+    function updateCopyrightYear() {
+        const copyrightYear = document.querySelector('.footer-bottom p');
+        if (copyrightYear) {
+            copyrightYear.innerHTML = `&copy; ${new Date().getFullYear()} GT Auto Sales. All rights reserved.`;
+        }
     }
 
     /* =========================================
@@ -187,7 +191,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         if (!vehicleId) return;
 
-        const container = document.querySelector('.vehicle-detail-container');
+        const container = document.getElementById('vehicle-detail-container');
         if (!container) return;
 
         const vehicle = await vehicleService.getById(vehicleId);
@@ -245,12 +249,20 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    /* =========================================
-       6. Initialization
-       ========================================= */
+
+
+    console.log('DOM Content Loaded (Inner Loop Fixed)');
+    initMobileMenu();
+    updateCopyrightYear();
+
+    // Page: Index (Featured)
     renderFeaturedCars();
     renderUpcoming();
+
+    // Page: Inventory
     initInventory();
+
+    // Page: Vehicle Detail
     initVehicleDetail();
 
     // Check for pre-filled forms from URL
@@ -268,5 +280,5 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (interestBox && vehiclePrefill) {
         interestBox.value = vehiclePrefill;
     }
-
 });
+
