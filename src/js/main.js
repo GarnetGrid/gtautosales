@@ -7,14 +7,51 @@ document.addEventListener('DOMContentLoaded', async () => {
     function initMobileMenu() {
         const menuToggle = document.querySelector('.menu-toggle');
         const navList = document.querySelector('.nav-list');
+        if (!menuToggle || !navList) return;
 
-        if (menuToggle && navList) {
-            menuToggle.addEventListener('click', () => {
-                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-                menuToggle.setAttribute('aria-expanded', !isExpanded);
-                navList.classList.toggle('active');
-            });
+        // Create overlay element dynamically
+        let overlay = document.querySelector('.nav-overlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.className = 'nav-overlay';
+            document.body.appendChild(overlay);
         }
+
+        function openMenu() {
+            navList.classList.add('active');
+            overlay.classList.add('active');
+            menuToggle.setAttribute('aria-expanded', 'true');
+            menuToggle.innerHTML = '✕';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            navList.classList.remove('active');
+            overlay.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.innerHTML = '☰';
+            document.body.style.overflow = '';
+        }
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = navList.classList.contains('active');
+            isOpen ? closeMenu() : openMenu();
+        });
+
+        overlay.addEventListener('click', closeMenu);
+
+        // Close on nav link click
+        navList.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navList.classList.contains('active')) {
+                closeMenu();
+                menuToggle.focus();
+            }
+        });
     }
 
     // Dynamic Copyright Year
@@ -34,7 +71,7 @@ document.addEventListener('DOMContentLoaded', async () => {
        3. Homepage Logic
        ========================================= */
     async function renderFeaturedCars() {
-        const grid = document.querySelector('.featured-grid');
+        const grid = document.getElementById('featured-cars');
         if (!grid) return;
 
         const vehicles = await vehicleService.getFeatured();
@@ -63,7 +100,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     async function renderUpcoming() {
-        const grid = document.querySelector('.upcoming-grid');
+        const grid = document.getElementById('upcoming-cars');
         if (!grid) return;
 
         const upcomingVehicles = await vehicleService.getUpcoming();
@@ -89,6 +126,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     let allVehicles = [];
 
     async function initInventory() {
+        // Only run on inventory page — homepage has its own #featured-cars / #upcoming-cars grids
+        if (!window.location.pathname.includes('inventory')) return;
         const grid = document.querySelector('.inventory-grid');
         if (!grid) return;
 
