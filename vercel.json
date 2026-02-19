@@ -1,40 +1,9 @@
 {
-    "rewrites": [
+    "redirects": [
         {
             "source": "/",
-            "destination": "/src/index.html"
-        },
-        {
-            "source": "/inventory",
-            "destination": "/src/inventory.html"
-        },
-        {
-            "source": "/contact",
-            "destination": "/src/contact.html"
-        },
-        {
-            "source": "/services",
-            "destination": "/src/services.html"
-        },
-        {
-            "source": "/financing",
-            "destination": "/src/financing.html"
-        },
-        {
-            "source": "/privacy",
-            "destination": "/src/privacy.html"
-        },
-        {
-            "source": "/terms",
-            "destination": "/src/terms.html"
-        },
-        {
-            "source": "/vehicle",
-            "destination": "/src/vehicle.html"
-        },
-        {
-            "source": "/admin",
-            "destination": "/src/admin.html"
+            "destination": "/src/index.html",
+            "permanent": false
         }
     ],
     "headers": [
