@@ -7,120 +7,7 @@
     <title>Admin Dashboard | GT Auto Sales</title>
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        .admin-container {
-            max-width: 1200px;
-            margin: 120px auto 60px;
-            padding: 0 20px;
-        }
-
-        .admin-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            border-bottom: 2px solid var(--color-light-grey);
-            padding-bottom: 20px;
-        }
-
-        .admin-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .admin-table th,
-        .admin-table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-        }
-
-        .admin-table th {
-            background-color: var(--color-primary);
-            color: white;
-            font-weight: 600;
-        }
-
-        .admin-table tr:hover {
-            background-color: #f9f9f9;
-        }
-
-        .action-btn {
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            margin-right: 5px;
-            border: none;
-        }
-
-        .btn-edit {
-            background-color: var(--color-accent);
-            color: white;
-        }
-
-        .btn-delete {
-            background-color: var(--color-secondary);
-            color: white;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            width: 100%;
-            max-width: 500px;
-            position: relative;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/admin.css">
 </head>
 
 <body>
@@ -141,79 +28,211 @@
     </header>
 
     <div class="admin-container">
+        <!-- Dashboard Header -->
         <div class="admin-header">
-            <h1>Vehicle Inventory Management</h1>
-            <button class="btn btn-primary" onclick="openModal()">+ Add New Vehicle</button>
+            <div>
+                <h1>Inventory Management</h1>
+                <p class="admin-subtitle">Manage your vehicle inventory, pricing, and listings.</p>
+            </div>
+            <button class="btn btn-primary" onclick="openModal()">
+                <span class="btn-icon">+</span> Add Vehicle
+            </button>
         </div>
 
-        <table class="admin-table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Image</th>
-                    <th>Year Make Model</th>
-                    <th>Price</th>
-                    <th>Type</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="inventory-table-body">
-                <!-- Populated by JS -->
-            </tbody>
-        </table>
+        <!-- Stats Cards -->
+        <div class="stats-grid" id="statsGrid">
+            <div class="stat-card">
+                <div class="stat-icon stat-icon-total">🚗</div>
+                <div class="stat-info">
+                    <span class="stat-value" id="statTotal">0</span>
+                    <span class="stat-label">Total Vehicles</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon stat-icon-featured">⭐</div>
+                <div class="stat-info">
+                    <span class="stat-value" id="statFeatured">0</span>
+                    <span class="stat-label">Featured</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon stat-icon-value">💰</div>
+                <div class="stat-info">
+                    <span class="stat-value" id="statValue">$0</span>
+                    <span class="stat-label">Total Value</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon stat-icon-avg">📊</div>
+                <div class="stat-info">
+                    <span class="stat-value" id="statAvg">$0</span>
+                    <span class="stat-label">Avg. Price</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search & Filter Bar -->
+        <div class="toolbar">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Search by make, model, or year..." autocomplete="off">
+            </div>
+            <div class="filter-group">
+                <select id="filterType" class="filter-select">
+                    <option value="">All Types</option>
+                    <option value="Sports">Sports</option>
+                    <option value="SUV">SUV</option>
+                    <option value="Sedan">Sedan</option>
+                    <option value="Coupe">Coupe</option>
+                    <option value="Wagon">Wagon</option>
+                </select>
+                <select id="filterSort" class="filter-select">
+                    <option value="newest">Newest First</option>
+                    <option value="price-high">Price: High → Low</option>
+                    <option value="price-low">Price: Low → High</option>
+                    <option value="mileage">Mileage: Low → High</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Inventory Table -->
+        <div class="table-wrapper">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Vehicle</th>
+                        <th>Year</th>
+                        <th>Price</th>
+                        <th>Mileage</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="inventory-table-body">
+                    <!-- Populated by JS -->
+                </tbody>
+            </table>
+            <div class="table-empty" id="tableEmpty" style="display:none;">
+                <span class="empty-icon">🔎</span>
+                <p>No vehicles match your search</p>
+            </div>
+        </div>
     </div>
 
     <!-- Add/Edit Modal -->
     <div class="modal" id="vehicleModal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <h2 id="modalTitle">Add Vehicle</h2>
+            <div class="modal-header">
+                <h2 id="modalTitle">Add Vehicle</h2>
+                <button class="close-modal" onclick="closeModal()" aria-label="Close modal">&times;</button>
+            </div>
             <form id="vehicleForm">
                 <input type="hidden" id="vehicleId">
-                <div class="form-group">
-                    <label>Make</label>
-                    <input type="text" id="make" required>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="make">Make</label>
+                        <input type="text" id="make" placeholder="e.g. BMW" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="model">Model</label>
+                        <input type="text" id="model" placeholder="e.g. M4 Competition" required>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Model</label>
-                    <input type="text" id="model" required>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="year">Year</label>
+                        <input type="number" id="year" placeholder="2024" min="1990" max="2030" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price ($)</label>
+                        <input type="number" id="price" placeholder="85000" min="0" required>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <div style="display: flex; gap: 10px;">
-                        <div style="flex:1;">
-                            <label>Year</label>
-                            <input type="number" id="year" required>
-                        </div>
-                        <div style="flex:1;">
-                            <label>Price</label>
-                            <input type="number" id="price" required>
-                        </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="mileage">Mileage</label>
+                        <input type="number" id="mileage" placeholder="4500" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Type</label>
+                        <select id="type">
+                            <option value="Sports">Sports</option>
+                            <option value="SUV">SUV</option>
+                            <option value="Sedan">Sedan</option>
+                            <option value="Coupe">Coupe</option>
+                            <option value="Wagon">Wagon</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Type</label>
-                    <select id="type">
-                        <option value="Sports">Sports</option>
-                        <option value="SUV">SUV</option>
-                        <option value="Sedan">Sedan</option>
-                        <option value="Coupe">Coupe</option>
-                        <option value="Wagon">Wagon</option>
-                    </select>
+                    <label for="imageUrl">Image URL</label>
+                    <input type="text" id="imageUrl" placeholder="https://... or assets/car1.jpg">
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Save Vehicle</button>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="engine">Engine</label>
+                        <input type="text" id="engine" placeholder="3.0L Twin-Turbo I6">
+                    </div>
+                    <div class="form-group">
+                        <label for="transmission">Transmission</label>
+                        <input type="text" id="transmission" placeholder="8-Speed Automatic">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="drivetrain">Drivetrain</label>
+                        <select id="drivetrain">
+                            <option value="RWD">RWD</option>
+                            <option value="AWD">AWD</option>
+                            <option value="FWD">FWD</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="color">Color</label>
+                        <input type="text" id="color" placeholder="Sao Paulo Yellow">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" rows="3" placeholder="Vehicle description..."></textarea>
+                </div>
+                <div class="form-group form-checkbox">
+                    <input type="checkbox" id="featured">
+                    <label for="featured">Mark as Featured</label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-submit">Save Vehicle</button>
             </form>
         </div>
     </div>
 
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-content modal-confirm">
+            <div class="confirm-icon">⚠️</div>
+            <h2>Delete Vehicle</h2>
+            <p id="deleteMessage">Are you sure you want to delete this vehicle? This action cannot be undone.</p>
+            <div class="confirm-actions">
+                <button class="btn btn-secondary" onclick="cancelDelete()">Cancel</button>
+                <button class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
     <!-- Login Overlay (Simple Mock) -->
-    <div id="loginOverlay"
-        style="position:fixed; top:0; left:0; width:100%; height:100%; background:white; z-index:3000; display:flex; justify-content:center; align-items:center;">
-        <div style="text-align:center; max-width:300px;">
-            <img src="assets/logo.svg" alt="Logo" style="width:200px; margin-bottom:20px;">
+    <div id="loginOverlay" class="login-overlay">
+        <div class="login-card">
+            <img src="assets/logo.svg" alt="Logo" class="login-logo">
             <h2>Admin Access</h2>
-            <input type="password" id="adminPass" placeholder="Enter Password"
-                style="padding:10px; width:100%; margin:10px 0; border:1px solid #ccc;">
-            <button class="btn btn-primary" style="width:100%;" onclick="checkLogin()">Login</button>
+            <p class="login-subtitle">Enter your credentials to manage inventory</p>
+            <div class="form-group">
+                <input type="password" id="adminPass" placeholder="Enter Password" class="login-input"
+                    onkeydown="if(event.key==='Enter')checkLogin()">
+            </div>
+            <button class="btn btn-primary btn-submit" onclick="checkLogin()">Login</button>
         </div>
     </div>
 
@@ -226,7 +245,8 @@
                 document.getElementById('loginOverlay').style.display = 'none';
                 sessionStorage.setItem('isAdmin', 'true');
             } else {
-                alert('Invalid Password');
+                document.getElementById('adminPass').classList.add('shake');
+                setTimeout(() => document.getElementById('adminPass').classList.remove('shake'), 500);
             }
         }
 

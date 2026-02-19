@@ -3,172 +3,273 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; script-src 'self' 'unsafe-inline';">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | GT Auto Sales</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@700;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/variables.css">
+    <title>Get In Touch — GT Auto Sales</title>
+    <meta name="description"
+        content="Contact GT Auto Sales for premium pre-owned vehicles. Tell us what you're looking for and our team will find your perfect ride.">
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-xl);
-        }
-
-        @media (max-width: 768px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .contact-info-card {
-            background: white;
-            padding: var(--spacing-lg);
-            border-radius: 8px;
-            box-shadow: var(--shadow-light);
-            height: 100%;
-        }
-
-        .info-item {
-            margin-bottom: var(--spacing-md);
-            display: flex;
-            align-items: flex-start;
-            gap: var(--spacing-sm);
-        }
-
-        .info-icon {
-            color: var(--color-secondary);
-            font-size: 1.25rem;
-        }
-    </style>
+    <link rel="stylesheet" href="css/contact.css">
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="container header-container">
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
             <a href="index.html" class="logo">
-                <span style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 900;">GT AUTO
-                    SALES</span>
+                <span class="logo-gt">GT</span> Auto Sales
             </a>
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="inventory.html" class="nav-link">Inventory</a></li>
-                    <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="financing.html" class="nav-link">Financing</a></li>
-                    <li><a href="contact.html" class="nav-link" style="color: var(--color-accent);">Contact</a></li>
-                </ul>
-            </nav>
-            <button class="menu-toggle" aria-label="Toggle navigation"> ☰ </button>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span>☰</span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
-    <main class="section-padding">
-        <div class="container">
-            <h1 class="section-title" style="text-align: center; margin-bottom: var(--spacing-xl);">Contact Us</h1>
+    <!-- Lead Capture Section -->
+    <section class="lead-section">
+        <h1>Find Your Perfect Ride</h1>
+        <p class="lead-subtitle">Tell us what you're looking for and we'll get back to you within 24 hours.</p>
 
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-info-card">
-                        <h3 style="margin-bottom: var(--spacing-md);">Get In Touch</h3>
-                        <div class="info-item">
-                            <span class="info-icon">📍</span>
-                            <div>
-                                <strong>Address:</strong><br>
-                                123 Auto Drive<br>
-                                Car City, ST 12345
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon">📞</span>
-                            <div>
-                                <strong>Phone:</strong><br>
-                                (555) 123-4567
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon">✉️</span>
-                            <div>
-                                <strong>Email:</strong><br>
-                                sales@gtautosales.com
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon">⏰</span>
-                            <div>
-                                <strong>Hours:</strong><br>
-                                Mon-Fri: 9am - 7pm<br>
-                                Sat: 10am - 5pm<br>
-                                Sun: Closed
-                            </div>
-                        </div>
-
-                        <!-- Map Placeholder -->
-                        <div
-                            style="background: #eee; height: 250px; margin-top: var(--spacing-lg); border-radius: 4px; display: flex; align-items: center; justify-content: center;">
-                            Map Placeholder (Google Maps Embed)
-                        </div>
+        <div class="lead-form" id="leadFormContainer">
+            <!-- The Form -->
+            <form id="leadForm" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="leadName">Full Name <span class="required">*</span></label>
+                        <input type="text" id="leadName" name="name" placeholder="John Doe" required
+                            autocomplete="name">
+                        <span class="error-msg" id="nameError">Please enter your name</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="leadEmail">Email <span class="required">*</span></label>
+                        <input type="email" id="leadEmail" name="email" placeholder="john@example.com" required
+                            autocomplete="email">
+                        <span class="error-msg" id="emailError">Please enter a valid email</span>
                     </div>
                 </div>
 
-                <div class="contact-form">
-                    <form
-                        style="background: white; padding: var(--spacing-lg); border-radius: 8px; box-shadow: var(--shadow-light);"
-                        onsubmit="event.preventDefault(); alert('Message sent!');">
-                        <h3 style="margin-bottom: var(--spacing-md);">Send us a Message</h3>
-                        <div class="form-group" style="margin-bottom: var(--spacing-md);">
-                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Name</label>
-                            <input type="text" required
-                                style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-grey); border-radius: 4px;">
-                        </div>
-                        <div class="form-group" style="margin-bottom: var(--spacing-md);">
-                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email</label>
-                            <input type="email" required
-                                style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-grey); border-radius: 4px;">
-                        </div>
-                        <div class="form-group" style="margin-bottom: var(--spacing-md);">
-                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Message</label>
-                            <textarea rows="5" id="message" required
-                                style="width: 100%; padding: 0.75rem; border: 1px solid var(--color-grey); border-radius: 4px;"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-                    </form>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="leadPhone">Phone</label>
+                        <input type="tel" id="leadPhone" name="phone" placeholder="(555) 123-4567" autocomplete="tel">
+                        <span class="error-msg" id="phoneError">Please enter a valid phone number</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="leadVehicleType">Vehicle Type <span class="required">*</span></label>
+                        <select id="leadVehicleType" name="vehicleType" required>
+                            <option value="" disabled selected>Select type…</option>
+                            <option value="sedan">Sedan</option>
+                            <option value="suv">SUV / Crossover</option>
+                            <option value="truck">Truck</option>
+                            <option value="coupe">Coupe / Sports</option>
+                            <option value="luxury">Luxury</option>
+                            <option value="electric">Electric / Hybrid</option>
+                            <option value="other">Other / Not Sure</option>
+                        </select>
+                        <span class="error-msg" id="vehicleTypeError">Please select a vehicle type</span>
+                    </div>
                 </div>
+
+                <div class="form-group">
+                    <label for="leadBudget">Budget Range</label>
+                    <select id="leadBudget" name="budget">
+                        <option value="" disabled selected>Select budget…</option>
+                        <option value="under-15k">Under $15,000</option>
+                        <option value="15k-25k">$15,000 – $25,000</option>
+                        <option value="25k-40k">$25,000 – $40,000</option>
+                        <option value="40k-60k">$40,000 – $60,000</option>
+                        <option value="60k-plus">$60,000+</option>
+                    </select>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="leadTradein" name="hasTradein">
+                    <label for="leadTradein">I have a vehicle to trade in</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="leadMessage">Additional Details</label>
+                    <textarea id="leadMessage" name="message"
+                        placeholder="Tell us about your ideal vehicle — preferred make, model, year, features…"
+                        rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="lead-submit-btn" id="submitBtn">
+                    <span class="spinner"></span>
+                    <span class="btn-label">Submit Inquiry →</span>
+                </button>
+            </form>
+
+            <!-- Success State (hidden by default) -->
+            <div class="form-success" id="formSuccess">
+                <div class="success-icon">🎉</div>
+                <h2>Inquiry Submitted!</h2>
+                <p id="successMessage">Thank you! Our team will review your request and get back to you within 24 hours.
+                </p>
+                <button class="reset-btn" id="resetBtn">Submit Another Inquiry</button>
             </div>
         </div>
-    </main>
 
-    <footer class="site-footer">
-        <div class="container footer-content">
+        <!-- Trust Badges -->
+        <div class="trust-badges">
+            <div class="trust-badge">
+                <span class="badge-icon">🔒</span>
+                <span>Your info is secure</span>
+            </div>
+            <div class="trust-badge">
+                <span class="badge-icon">⚡</span>
+                <span>24hr response</span>
+            </div>
+            <div class="trust-badge">
+                <span class="badge-icon">🏆</span>
+                <span>No obligation</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
             <div class="footer-brand">
-                <h3>GT Auto Sales</h3>
-                <p>Your trusted partner in finding the perfect vehicle.</p>
+                <h3><span class="logo-gt">GT</span> Auto Sales</h3>
+                <p>Your trusted source for quality pre-owned vehicles.</p>
             </div>
             <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="inventory.html">Browse Cars</a></li>
-                    <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="financing.html">Apply for Financing</a></li>
-                    <li><a href="services.html">Services</a></li>
-                </ul>
+                <a href="index.html">Home</a>
+                <a href="inventory.html">Inventory</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
             </div>
-            <div class="footer-contact">
-                <h4>Contact Us</h4>
-                <p>123 Auto Drive, Car City, ST 12345</p>
-                <p>Phone: (555) 123-4567</p>
-                <p>Email: sales@gtautosales.com</p>
+            <div class="footer-copy">
+                <p>&copy; 2026 GT Auto Sales. All rights reserved.</p>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 GT Auto Sales. All rights reserved.</p>
         </div>
     </footer>
 
-    <script type="module" src="js/main.js"></script>
+    <script>
+        // ── Mobile Nav ──────────────────────────────────────────────
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', () => {
+                    const open = navLinks.classList.toggle('active');
+                    hamburger.setAttribute('aria-expanded', open);
+                    hamburger.querySelector('span').textContent = open ? '✕' : '☰';
+                    document.body.style.overflow = open ? 'hidden' : '';
+                });
+            }
+
+            // ── Validation Rules ───────────────────────────────────
+            const rules = {
+                leadName: { test: v => v.trim().length >= 2, errorId: 'nameError' },
+                leadEmail: { test: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), errorId: 'emailError' },
+                leadPhone: { test: v => !v || /^[\d\s\-\+\(\)]{7,}$/.test(v), errorId: 'phoneError' },
+                leadVehicleType: { test: v => v !== '', errorId: 'vehicleTypeError' },
+            };
+
+            const form = document.getElementById('leadForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const formSuccess = document.getElementById('formSuccess');
+            const resetBtn = document.getElementById('resetBtn');
+            const successMessage = document.getElementById('successMessage');
+
+            // Clear errors on input
+            Object.keys(rules).forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.addEventListener('input', () => {
+                        el.closest('.form-group').classList.remove('has-error');
+                    });
+                    el.addEventListener('change', () => {
+                        el.closest('.form-group').classList.remove('has-error');
+                    });
+                }
+            });
+
+            // Phone formatting
+            const phoneInput = document.getElementById('leadPhone');
+            if (phoneInput) {
+                phoneInput.addEventListener('input', (e) => {
+                    let val = e.target.value.replace(/\D/g, '');
+                    if (val.length >= 6) {
+                        val = `(${val.slice(0, 3)}) ${val.slice(3, 6)}-${val.slice(6, 10)}`;
+                    } else if (val.length >= 3) {
+                        val = `(${val.slice(0, 3)}) ${val.slice(3)}`;
+                    }
+                    e.target.value = val;
+                });
+            }
+
+            // ── Submit Handler ─────────────────────────────────────
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                let valid = true;
+
+                // Validate
+                Object.entries(rules).forEach(([id, rule]) => {
+                    const el = document.getElementById(id);
+                    const group = el.closest('.form-group');
+                    if (!rule.test(el.value)) {
+                        group.classList.add('has-error');
+                        valid = false;
+                    } else {
+                        group.classList.remove('has-error');
+                    }
+                });
+
+                if (!valid) {
+                    const firstError = form.querySelector('.has-error input, .has-error select');
+                    if (firstError) firstError.focus();
+                    return;
+                }
+
+                // Submit
+                submitBtn.disabled = true;
+                submitBtn.classList.add('loading');
+
+                const leadData = {
+                    name: document.getElementById('leadName').value.trim(),
+                    email: document.getElementById('leadEmail').value.trim(),
+                    phone: document.getElementById('leadPhone').value.trim(),
+                    vehicleType: document.getElementById('leadVehicleType').value,
+                    budget: document.getElementById('leadBudget').value,
+                    hasTradein: document.getElementById('leadTradein').checked,
+                    message: document.getElementById('leadMessage').value.trim(),
+                };
+
+                // Simulate submission (mock)
+                try {
+                    await new Promise(resolve => setTimeout(resolve, 1200));
+                    console.log('Lead submitted:', leadData);
+
+                    // Show success
+                    form.style.display = 'none';
+                    successMessage.textContent = `Thank you, ${leadData.name}! Our team will contact you within 24 hours.`;
+                    formSuccess.classList.add('active');
+                } catch (err) {
+                    console.error('Submission failed:', err);
+                    alert('Something went wrong. Please try again.');
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('loading');
+                }
+            });
+
+            // ── Reset ──────────────────────────────────────────────
+            resetBtn.addEventListener('click', () => {
+                form.reset();
+                form.style.display = '';
+                formSuccess.classList.remove('active');
+                form.querySelectorAll('.has-error').forEach(g => g.classList.remove('has-error'));
+            });
+        });
+    </script>
 </body>
 
 </html>

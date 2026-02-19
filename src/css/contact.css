@@ -1,0 +1,353 @@
+/* ============================================================
+   GT Auto Sales — Lead Capture Form Styles
+   ============================================================ */
+
+/* ── Layout ─────────────────────────────────────────────────── */
+.lead-section {
+    padding: 4rem 2rem;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.lead-section h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--primary, #e63946), var(--accent, #f4a261));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.lead-section .lead-subtitle {
+    text-align: center;
+    color: var(--text-muted, #888);
+    font-size: 1.05rem;
+    margin-bottom: 2.5rem;
+}
+
+/* ── Form Container ─────────────────────────────────────────── */
+.lead-form {
+    background: var(--card-bg, #1a1a2e);
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+    position: relative;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+/* ── Labels ─────────────────────────────────────────────────── */
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary, #ccc);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.form-group label .required {
+    color: var(--primary, #e63946);
+    margin-left: 2px;
+}
+
+/* ── Inputs ─────────────────────────────────────────────────── */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: var(--input-bg, rgba(255, 255, 255, 0.05));
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.12));
+    border-radius: 10px;
+    color: var(--text-primary, #fff);
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-muted, #666);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary, #e63946);
+    box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.15);
+}
+
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+.form-group select option {
+    background: #1a1a2e;
+    color: #fff;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* ── Checkbox ───────────────────────────────────────────────── */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--primary, #e63946);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    text-transform: none;
+    font-weight: 400;
+    font-size: 0.95rem;
+    cursor: pointer;
+    color: var(--text-secondary, #ccc);
+}
+
+/* ── Validation ─────────────────────────────────────────────── */
+.form-group .error-msg {
+    display: none;
+    font-size: 0.78rem;
+    color: var(--primary, #e63946);
+    margin-top: 0.3rem;
+    padding-left: 0.25rem;
+}
+
+.form-group.has-error input,
+.form-group.has-error select,
+.form-group.has-error textarea {
+    border-color: var(--primary, #e63946);
+    box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.12);
+}
+
+.form-group.has-error .error-msg {
+    display: block;
+    animation: slideIn 0.2s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── Submit Button ──────────────────────────────────────────── */
+.lead-submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--primary, #e63946), #c1121f);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.2s, opacity 0.2s;
+    margin-top: 0.5rem;
+}
+
+.lead-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(230, 57, 70, 0.35);
+}
+
+.lead-submit-btn:active {
+    transform: translateY(0);
+}
+
+.lead-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.lead-submit-btn .spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+.lead-submit-btn.loading .spinner {
+    display: inline-block;
+}
+
+.lead-submit-btn.loading .btn-label {
+    display: none;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ── Success State ──────────────────────────────────────────── */
+.form-success {
+    display: none;
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.form-success.active {
+    display: block;
+    animation: fadeScale 0.5s ease;
+}
+
+.form-success .success-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: bounce 0.6s ease 0.3s both;
+}
+
+.form-success h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary, #fff);
+}
+
+.form-success p {
+    color: var(--text-muted, #888);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.form-success .reset-btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border: 1px solid var(--border, rgba(255, 255, 255, 0.15));
+    border-radius: 10px;
+    background: transparent;
+    color: var(--text-secondary, #ccc);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.form-success .reset-btn:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+}
+
+@keyframes fadeScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(0);
+    }
+
+    60% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ── Trust Badges ───────────────────────────────────────────── */
+.trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--text-muted, #666);
+}
+
+.trust-badge .badge-icon {
+    font-size: 1.2rem;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 640px) {
+    .lead-section {
+        padding: 2rem 1rem;
+    }
+
+    .lead-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .lead-form {
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .trust-badges {
+        gap: 1rem;
+    }
+}
