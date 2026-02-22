@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /assets/private/
-
-Sitemap: https://www.gtautosales.com/sitemap.xml

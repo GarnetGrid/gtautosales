@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get In Touch — GT Auto Sales</title>
+    <meta name="description"
+        content="Contact GT Auto Sales for premium pre-owned vehicles. Tell us what you're looking for and our team will find your perfect ride.">
+    <meta property="og:title" content="Contact GT Auto Sales">
+    <meta property="og:description" content="Tell us what you're looking for and our team will find your perfect ride.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gtautosales.garnetgrid.com/contact.html">
+    <meta property="og:image" content="https://gtautosales.garnetgrid.com/og-image.png">
+    <meta property="og:site_name" content="GT Auto Sales">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact GT Auto Sales">
+    <meta name="twitter:image" content="https://gtautosales.garnetgrid.com/og-image.png">
+    <link rel="icon" type="image/svg+xml" href="assets/gt-logo-animated.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#0a1f33">
+    <link rel="canonical" href="https://gtautosales.garnetgrid.com/contact.html">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contact.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EPXY5VQ39S"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments) } gtag('js', new Date()); gtag('config', 'G-EPXY5VQ39S');</script>
+</head>
+
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-gt">GT</span> Auto Sales
+            </a>
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="inventory.html" class="nav-link">Inventory</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="financing.html" class="nav-link">Financing</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        </div>
+    </header>
+
+    <div class="hero" style="min-height: 35vh; padding: 8vh 0;">
+        <div class="container">
+            <h1 class="hero-title">Find Your Perfect Ride</h1>
+            <p class="hero-subtitle">Tell us what you're looking for and we'll get back to you within 24 hours.</p>
+        </div>
+    </div>
+
+    <main id="main" class="section-padding">
+        <div class="container">
+            <div class="form-container" id="leadFormContainer">
+                <form id="leadForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="leadName">Full Name <span class="required">*</span></label>
+                            <input type="text" id="leadName" name="name" placeholder="John Doe" required
+                                autocomplete="name">
+                            <span class="error-msg" id="nameError">Please enter your name</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="leadEmail">Email <span class="required">*</span></label>
+                            <input type="email" id="leadEmail" name="email" placeholder="john@example.com" required
+                                autocomplete="email">
+                            <span class="error-msg" id="emailError">Please enter a valid email</span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="leadPhone">Phone</label>
+                            <input type="tel" id="leadPhone" name="phone" placeholder="(555) 123-4567"
+                                autocomplete="tel">
+                            <span class="error-msg" id="phoneError">Please enter a valid phone number</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="leadVehicleType">Vehicle Type <span class="required">*</span></label>
+                            <select id="leadVehicleType" name="vehicleType" required>
+                                <option value="" disabled selected>Select type…</option>
+                                <option value="sedan">Sedan</option>
+                                <option value="suv">SUV / Crossover</option>
+                                <option value="truck">Truck</option>
+                                <option value="coupe">Coupe / Sports</option>
+                                <option value="luxury">Luxury</option>
+                                <option value="electric">Electric / Hybrid</option>
+                                <option value="other">Other / Not Sure</option>
+                            </select>
+                            <span class="error-msg" id="vehicleTypeError">Please select a vehicle type</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="leadBudget">Budget Range</label>
+                        <select id="leadBudget" name="budget">
+                            <option value="" disabled selected>Select budget…</option>
+                            <option value="under-15k">Under $15,000</option>
+                            <option value="15k-25k">$15,000 – $25,000</option>
+                            <option value="25k-40k">$25,000 – $40,000</option>
+                            <option value="40k-60k">$40,000 – $60,000</option>
+                            <option value="60k-plus">$60,000+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <input type="checkbox" id="leadTradein" name="hasTradein" style="width: auto;">
+                        <label for="leadTradein" style="margin: 0; font-weight: 500;">I have a vehicle to trade
+                            in</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="leadMessage">Additional Details</label>
+                        <textarea id="leadMessage" name="message"
+                            placeholder="Tell us about your ideal vehicle — preferred make, model, year, features…"
+                            rows="4"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="submitBtn"
+                        style="width: 100%; justify-content: center; padding: 1rem;">
+                        <span class="btn-label">Submit Inquiry →</span>
+                    </button>
+                </form>
+
+                <div class="form-success" id="formSuccess" style="display: none; text-align: center; padding: 3rem;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🎉</div>
+                    <h2>Inquiry Submitted!</h2>
+                    <p id="successMessage" style="margin: 1rem 0; color: var(--color-text-light);">Thank you! Our team
+                        will review your request and get back to you within 24 hours.</p>
+                    <button class="btn btn-warm" id="resetBtn">Submit Another Inquiry</button>
+                </div>
+            </div>
+
+            <!-- Trust Badges -->
+            <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;">
+                <div
+                    style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-text-light); font-size: 0.9rem;">
+                    <svg width="20" height="20" fill="none" stroke="var(--color-success)" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                    Your info is secure
+                </div>
+                <div
+                    style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-text-light); font-size: 0.9rem;">
+                    <svg width="20" height="20" fill="none" stroke="var(--color-warm)" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    24hr response
+                </div>
+                <div
+                    style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-text-light); font-size: 0.9rem;">
+                    <svg width="20" height="20" fill="none" stroke="var(--color-accent)" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    No obligation
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3><span class="logo-gt">GT</span> Auto Sales</h3>
+                <p>Your trusted source for quality pre-owned vehicles since 2020.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="inventory.html">Browse Cars</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="financing.html">Financing</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Get In Touch</h4>
+                <p>123 Auto Drive, Car City, ST 12345</p>
+                <p>Phone: (555) 123-4567</p>
+                <p>Email: sales@gtautosales.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 GT Auto Sales. All rights reserved.</p>
+            <a href="https://garnetgrid.com" target="_blank" rel="noopener" class="garnetgrid-badge" title="Built by GarnetGrid">
+                <svg class="gem-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="gf1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#9b1b30"/><stop offset="100%" stop-color="#d4374a"/></linearGradient>
+                        <linearGradient id="gf2" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#e63946"/><stop offset="100%" stop-color="#7a1525"/></linearGradient>
+                        <linearGradient id="gf3" x1="50%" y1="0%" x2="50%" y2="100%"><stop offset="0%" stop-color="#ff6b6b"/><stop offset="100%" stop-color="#c0392b"/></linearGradient>
+                        <linearGradient id="gs" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="white" stop-opacity=".8"/><stop offset="100%" stop-color="white" stop-opacity="0"/></linearGradient>
+                    </defs>
+                    <style>
+                        @keyframes facet-shimmer{0%,100%{opacity:0}15%{opacity:.9}30%{opacity:0}}
+                        @keyframes gem-rotate{0%,100%{transform:rotate(0) scale(1)}25%{transform:rotate(3deg) scale(1.02)}75%{transform:rotate(-3deg) scale(1.02)}}
+                        @keyframes sparkle-pop{0%,100%{opacity:0;transform:scale(0)}50%{opacity:1;transform:scale(1)}}
+                        .gb{transform-origin:12px 12px;animation:gem-rotate 4s ease-in-out infinite}
+                        .sh1{animation:facet-shimmer 3s ease-in-out infinite}
+                        .sh2{animation:facet-shimmer 3s ease-in-out infinite;animation-delay:1s}
+                        .sh3{animation:facet-shimmer 3s ease-in-out infinite;animation-delay:2s}
+                        .sk{transform-origin:center;animation:sparkle-pop 2.5s ease-in-out infinite}
+                        .sk:nth-child(2){animation-delay:.8s}.sk:nth-child(3){animation-delay:1.6s}
+                    </style>
+                    <g class="gb">
+                        <polygon points="12,22 4,10 20,10" fill="url(#gf1)"/>
+                        <polygon points="4,10 8,3 12,6 12,10" fill="url(#gf2)"/>
+                        <polygon points="20,10 16,3 12,6 12,10" fill="url(#gf3)"/>
+                        <polygon points="8,3 12,1.5 16,3 12,6" fill="#e63946"/>
+                        <polygon points="4,10 12,10 12,22" fill="url(#gf2)" opacity=".7"/>
+                        <polygon points="20,10 12,10 12,22" fill="url(#gf1)" opacity=".8"/>
+                        <polygon class="sh1" points="4,10 12,10 12,22" fill="url(#gs)" opacity="0"/>
+                        <polygon class="sh2" points="20,10 12,10 12,22" fill="url(#gs)" opacity="0"/>
+                        <polygon class="sh3" points="8,3 12,1.5 16,3 12,6" fill="url(#gs)" opacity="0"/>
+                    </g>
+                    <g><circle class="sk" cx="3" cy="5" r=".8" fill="white" opacity="0"/><circle class="sk" cx="21" cy="4" r=".6" fill="white" opacity="0"/><circle class="sk" cx="22" cy="16" r=".7" fill="white" opacity="0"/></g>
+                </svg>
+                Built by <span>GarnetGrid</span>
+            </a>
+            <div class="legal-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ── Mobile Nav ─────────────────────────────────────
+            const menuToggle = document.getElementById('menuToggle');
+            const mainNav = document.getElementById('mainNav');
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', () => {
+                    const open = mainNav.classList.toggle('active');
+                    menuToggle.setAttribute('aria-expanded', open);
+                    menuToggle.textContent = open ? '✕' : '☰';
+                    document.body.style.overflow = open ? 'hidden' : '';
+                });
+            }
+
+            // ── Validation Rules ───────────────────────────────
+            const rules = {
+                leadName: { test: v => v.trim().length >= 2, errorId: 'nameError' },
+                leadEmail: { test: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), errorId: 'emailError' },
+                leadPhone: { test: v => !v || /^[\d\s\-\+\(\)]{7,}$/.test(v), errorId: 'phoneError' },
+                leadVehicleType: { test: v => v !== '', errorId: 'vehicleTypeError' },
+            };
+
+            const form = document.getElementById('leadForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const formSuccess = document.getElementById('formSuccess');
+            const resetBtn = document.getElementById('resetBtn');
+            const successMessage = document.getElementById('successMessage');
+
+            Object.keys(rules).forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.addEventListener('input', () => el.closest('.form-group').classList.remove('has-error'));
+                    el.addEventListener('change', () => el.closest('.form-group').classList.remove('has-error'));
+                }
+            });
+
+            // Phone formatting
+            const phoneInput = document.getElementById('leadPhone');
+            if (phoneInput) {
+                phoneInput.addEventListener('input', (e) => {
+                    let val = e.target.value.replace(/\D/g, '');
+                    if (val.length >= 6) val = `(${val.slice(0, 3)}) ${val.slice(3, 6)}-${val.slice(6, 10)}`;
+                    else if (val.length >= 3) val = `(${val.slice(0, 3)}) ${val.slice(3)}`;
+                    e.target.value = val;
+                });
+            }
+
+            // ── Submit Handler ─────────────────────────────────
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                let valid = true;
+                Object.entries(rules).forEach(([id, rule]) => {
+                    const el = document.getElementById(id);
+                    const group = el.closest('.form-group');
+                    if (!rule.test(el.value)) { group.classList.add('has-error'); valid = false; }
+                    else { group.classList.remove('has-error'); }
+                });
+                if (!valid) {
+                    const firstError = form.querySelector('.has-error input, .has-error select');
+                    if (firstError) firstError.focus();
+                    return;
+                }
+
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.7';
+
+                const leadData = {
+                    name: document.getElementById('leadName').value.trim(),
+                    email: document.getElementById('leadEmail').value.trim(),
+                    phone: document.getElementById('leadPhone').value.trim(),
+                    vehicleType: document.getElementById('leadVehicleType').value,
+                    budget: document.getElementById('leadBudget').value,
+                    hasTradein: document.getElementById('leadTradein').checked,
+                    message: document.getElementById('leadMessage').value.trim(),
+                };
+
+                try {
+                    await new Promise(resolve => setTimeout(resolve, 1200));
+                    console.log('Lead submitted:', leadData);
+                    form.style.display = 'none';
+                    successMessage.textContent = `Thank you, ${leadData.name}! Our team will contact you within 24 hours.`;
+                    formSuccess.style.display = 'block';
+                } catch (err) {
+                    console.error('Submission failed:', err);
+                    alert('Something went wrong. Please try again.');
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                }
+            });
+
+            resetBtn.addEventListener('click', () => {
+                form.reset();
+                form.style.display = '';
+                formSuccess.style.display = 'none';
+                form.querySelectorAll('.has-error').forEach(g => g.classList.remove('has-error'));
+            });
+        });
+    </script>
+</body>
+
+</html>

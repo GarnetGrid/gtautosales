@@ -1,61 +1,50 @@
 # GT Auto Sales Website
 
-A premium automotive dealership website built with modern HTML5, CSS3, and JavaScript.
+Premium automotive dealership website rebranded from legacy "Yes Motors".
+Built with efficient, semantic HTML5, CSS3 (Custom Properties), and Modular JavaScript.
 
 ## Features
--   **Dynamic Inventory:** Browse vehicles with advanced filtering (Make, Type, Price).
--   **Vehicle Details:** Comprehensive specs, gallery, and financing calculation integration.
--   **Admin Dashboard:** `/admin.html` (Password: `admin123`) for inventory management.
--   **Modular Architecture:** Built with ES Modules and a `VehicleService` layer for data abstraction.
--   **Mobile First:** Fully responsive design for all devices.
+- **Dynamic Inventory**: Client-side rendering of vehicle inventory with extensive filters (Make, Type, Price, Year).
+- **Service Booking**: Dedicated page for services with direct booking integration.
+- **Lead Generation**: "Request Info" and "Finance Application" forms pre-filled with vehicle data.
+- **Responsive Design**: Mobile-first approach with sidebar filters and touch-friendly navigation.
+- **Compliance**: GDPR-ready cookie consent and CSP security headers.
 
-## Visual Walkthrough
+## Development
 
-### 1. Immersive Hero Section
-Premium first impression with a dynamic call-to-action.
-![Hero Section](src/assets/docs/home-hero.png)
+### Prerequisites
+- Python 3 (for local server) or any static file server.
 
-### 2. Featured Inventory
-High-quality vehicle cards with key specs and transparent pricing.
-![Featured Vehicles](src/assets/docs/home-featured.png)
+### Local Setup
+1. Clone the repository.
+   ```bash
+   git clone https://github.com/GarnetGrid/gtautosales.git
+   ```
+2. Navigate to the source directory.
+   ```bash
+   cd src
+   ```
+3. Start a local server.
+   ```bash
+   python3 -m http.server 8080
+   ```
+4. Visit `http://localhost:8080` in your browser.
 
-### 3. Dynamic Inventory Grid
-Advanced filtering by Make, Model, and Price with real-time updates.
-![Inventory Grid](src/assets/docs/inventory-grid.png)
+## Deployment
+This site is designed to be hosted on any static hosting provider.
 
-### 4. Detailed Vehicle Pages
-Comprehensive specifications, financing calculator (mock), and lead generation forms.
-![Vehicle Details](src/assets/docs/vehicle-details.png)
+### GitHub Pages
+1. Push the `src` folder to a GitHub repository.
+2. Go to **Settings > Pages**.
+3. Select the `main` branch and `/src` folder as the source.
 
-> [!TIP]
-> **[View Full Walkthrough & Verification Log](docs/WALKTHROUGH.md)** for a detailed breakdown of all features and architectural decisions.
+### Netlify / Vercel
+1. Link your repository.
+2. Set the *Publish directory* to `src`.
+3. No build command required.
 
-## Setup & Run
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/GarnetGrid/gtautosales.git
-    cd gtautosales
-    ```
-2.  **Run locally:**
-    Since the project uses ES Modules, you must run it with a local server.
-    ```bash
-    # Python 3
-    python3 -m http.server 8080 -d src
-    
-    # Node.js (http-server)
-    npx http-server src
-    ```
-3.  **Visit:** `http://localhost:8080`
-
-## Admin Access
--   URL: `/admin.html`
--   Mock Password: `admin123`
--   *Note: Changes in Admin are currently saved to memory (Mock Mode) and will reset on refresh.*
-
-## Future Roadmap (Phase 4)
--   Integrate Supabase for persistent database storage.
--   Enable live Row Level Security (RLS) for Admin.
--   Deploy Edge Functions for secure logic.
-
-## License
-Proprietary - GT Auto Sales
+## Structure
+- `src/index.html`: Homepage.
+- `src/css/`: Stylesheets (variables, layout, components).
+- `src/js/`: Logic (main.js handles all shared and page-specific logic).
+- `src/assets/`: Images and static resources.
