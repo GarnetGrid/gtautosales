@@ -2,7 +2,7 @@ import { MOCK_VEHICLES, UPCOMING_VEHICLES } from '../data/mockVehicles.js';
 import { supabase } from './supabaseClient.js';
 
 // Configuration: Toggle true/false to switch between Mock and Live (Supabase)
-const USE_MOCK_DATA = true;
+const USE_MOCK_DATA = false;
 
 /**
  * Maps a flat DB row to the nested { specs: {} } shape the UI expects

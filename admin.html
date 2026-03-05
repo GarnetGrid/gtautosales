@@ -2,12 +2,18 @@
 <html lang="en">
 
 <head>
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://esm.sh https://js.stripe.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https:; frame-src https://js.stripe.com;">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard | GT Auto Sales</title>
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/admin.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NPKY03KCHF"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments) } gtag('js', new Date()); gtag('config', 'G-NPKY03KCHF');</script>
 </head>
 
 <body>
@@ -20,106 +26,233 @@
             </a>
             <nav class="nav">
                 <ul class="nav-list">
+                    <li><span class="nav-link user-greeting">👤 <span id="userDisplay">Staff</span></span></li>
                     <li><a href="index.html" class="nav-link">Back to Site</a></li>
-                    <li><a href="#" class="nav-link btn-primary" onclick="logout()">Logout</a></li>
+                    <li><a href="#" class="nav-link btn-primary" onclick="handleLogout()">Logout</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <div class="admin-container">
-        <!-- Dashboard Header -->
+        <!-- Tab Navigation -->
+        <div class="admin-tabs">
+            <button class="tab-btn active" data-tab="inventory" onclick="switchTab('inventory')">🚗 Inventory</button>
+            <button class="tab-btn" data-tab="leads" onclick="switchTab('leads')">📋 Leads</button>
+        </div>
+
+        <!-- Inventory Tab -->
+        <div class="tab-panel active" id="panel-inventory">
+
+            <!-- Dashboard Header -->
+            <div class="admin-header">
+                <div>
+                    <h1>Inventory Management</h1>
+                    <p class="admin-subtitle">Manage your vehicle inventory, pricing, and listings.</p>
+                </div>
+                <button class="btn btn-primary" onclick="openModal()">
+                    <span class="btn-icon">+</span> Add Vehicle
+                </button>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid" id="statsGrid">
+                <div class="stat-card">
+                    <div class="stat-icon stat-icon-total">🚗</div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="statTotal">0</span>
+                        <span class="stat-label">Total Vehicles</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon stat-icon-featured">⭐</div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="statFeatured">0</span>
+                        <span class="stat-label">Featured</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon stat-icon-value">💰</div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="statValue">$0</span>
+                        <span class="stat-label">Total Value</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon stat-icon-avg">📊</div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="statAvg">$0</span>
+                        <span class="stat-label">Avg. Price</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search & Filter Bar -->
+            <div class="toolbar">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="searchInput" placeholder="Search by make, model, or year..."
+                        autocomplete="off">
+                </div>
+                <div class="filter-group">
+                    <select id="filterType" class="filter-select">
+                        <option value="">All Types</option>
+                        <option value="Sports">Sports</option>
+                        <option value="SUV">SUV</option>
+                        <option value="Sedan">Sedan</option>
+                        <option value="Coupe">Coupe</option>
+                        <option value="Wagon">Wagon</option>
+                    </select>
+                    <select id="filterSort" class="filter-select">
+                        <option value="newest">Newest First</option>
+                        <option value="price-high">Price: High → Low</option>
+                        <option value="price-low">Price: Low → High</option>
+                        <option value="mileage">Mileage: Low → High</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Inventory Table -->
+            <div class="table-wrapper">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Vehicle</th>
+                            <th>Year</th>
+                            <th>Price</th>
+                            <th>Mileage</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventory-table-body">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+                <div class="table-empty" id="tableEmpty" style="display:none;">
+                    <span class="empty-icon">🔎</span>
+                    <p>No vehicles match your search</p>
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- /panel-inventory -->
+
+    <!-- Leads Tab -->
+    <div class="tab-panel" id="panel-leads">
         <div class="admin-header">
             <div>
-                <h1>Inventory Management</h1>
-                <p class="admin-subtitle">Manage your vehicle inventory, pricing, and listings.</p>
+                <h1>Lead Management</h1>
+                <p class="admin-subtitle">Track and manage incoming leads from the website.</p>
             </div>
-            <button class="btn btn-primary" onclick="openModal()">
-                <span class="btn-icon">+</span> Add Vehicle
-            </button>
-        </div>
-
-        <!-- Stats Cards -->
-        <div class="stats-grid" id="statsGrid">
-            <div class="stat-card">
-                <div class="stat-icon stat-icon-total">🚗</div>
-                <div class="stat-info">
-                    <span class="stat-value" id="statTotal">0</span>
-                    <span class="stat-label">Total Vehicles</span>
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon stat-icon-featured">⭐</div>
-                <div class="stat-info">
-                    <span class="stat-value" id="statFeatured">0</span>
-                    <span class="stat-label">Featured</span>
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon stat-icon-value">💰</div>
-                <div class="stat-info">
-                    <span class="stat-value" id="statValue">$0</span>
-                    <span class="stat-label">Total Value</span>
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon stat-icon-avg">📊</div>
-                <div class="stat-info">
-                    <span class="stat-value" id="statAvg">$0</span>
-                    <span class="stat-label">Avg. Price</span>
-                </div>
+            <div class="lead-stats-mini">
+                <span class="lead-stat-badge hot">🔥 <span id="hotCount">0</span> Hot</span>
+                <span class="lead-stat-badge warm">🌡️ <span id="warmCount">0</span> Warm</span>
+                <span class="lead-stat-badge cold">❄️ <span id="coldCount">0</span> Cold</span>
             </div>
         </div>
 
-        <!-- Search & Filter Bar -->
+        <!-- Lead Filters -->
         <div class="toolbar">
             <div class="search-box">
                 <span class="search-icon">🔍</span>
-                <input type="text" id="searchInput" placeholder="Search by make, model, or year..." autocomplete="off">
+                <input type="text" id="leadSearchInput" placeholder="Search leads by name, email, or phone..."
+                    autocomplete="off">
             </div>
             <div class="filter-group">
-                <select id="filterType" class="filter-select">
-                    <option value="">All Types</option>
-                    <option value="Sports">Sports</option>
-                    <option value="SUV">SUV</option>
-                    <option value="Sedan">Sedan</option>
-                    <option value="Coupe">Coupe</option>
-                    <option value="Wagon">Wagon</option>
+                <select id="filterStage" class="filter-select">
+                    <option value="">All Stages</option>
+                    <option value="new">New</option>
+                    <option value="contacted">Contacted</option>
+                    <option value="qualified">Qualified</option>
+                    <option value="negotiation">Negotiation</option>
+                    <option value="closed_won">Closed Won</option>
+                    <option value="closed_lost">Closed Lost</option>
                 </select>
-                <select id="filterSort" class="filter-select">
-                    <option value="newest">Newest First</option>
-                    <option value="price-high">Price: High → Low</option>
-                    <option value="price-low">Price: Low → High</option>
-                    <option value="mileage">Mileage: Low → High</option>
+                <select id="filterTemp" class="filter-select">
+                    <option value="">All Temperatures</option>
+                    <option value="hot">🔥 Hot</option>
+                    <option value="warm">🌡️ Warm</option>
+                    <option value="cold">❄️ Cold</option>
                 </select>
             </div>
         </div>
 
-        <!-- Inventory Table -->
+        <!-- Leads Table -->
         <div class="table-wrapper">
             <table class="admin-table">
                 <thead>
                     <tr>
-                        <th>Vehicle</th>
-                        <th>Year</th>
-                        <th>Price</th>
-                        <th>Mileage</th>
-                        <th>Type</th>
-                        <th>Status</th>
+                        <th>Name</th>
+                        <th>Contact</th>
+                        <th>Vehicle Interest</th>
+                        <th>Temperature</th>
+                        <th>Stage</th>
+                        <th>Date</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody id="inventory-table-body">
+                <tbody id="leads-table-body">
                     <!-- Populated by JS -->
                 </tbody>
             </table>
-            <div class="table-empty" id="tableEmpty" style="display:none;">
-                <span class="empty-icon">🔎</span>
-                <p>No vehicles match your search</p>
+            <div class="table-empty" id="leadsTableEmpty" style="display:none;">
+                <span class="empty-icon">📭</span>
+                <p>No leads yet — they'll appear here when submitted via the website</p>
             </div>
         </div>
-    </div>
 
+        <!-- Lead Detail Drawer -->
+        <div class="lead-drawer" id="leadDrawer">
+            <div class="drawer-header">
+                <h3 id="drawerName">Lead Name</h3>
+                <button class="close-modal" onclick="closeDrawer()">&times;</button>
+            </div>
+            <div class="drawer-body">
+                <div class="drawer-section">
+                    <h4>Contact Info</h4>
+                    <p id="drawerEmail"></p>
+                    <p id="drawerPhone"></p>
+                </div>
+                <div class="drawer-section">
+                    <h4>Details</h4>
+                    <p><strong>Vehicle Interest:</strong> <span id="drawerVehicle"></span></p>
+                    <p><strong>Budget:</strong> <span id="drawerBudget"></span></p>
+                    <p><strong>Trade-In:</strong> <span id="drawerTradeIn"></span></p>
+                </div>
+                <div class="drawer-section">
+                    <h4>Notes</h4>
+                    <p id="drawerNotes" class="drawer-notes"></p>
+                </div>
+                <div class="drawer-section">
+                    <h4>Quick Actions</h4>
+                    <div class="drawer-actions">
+                        <select id="drawerStage" class="filter-select" onchange="updateLeadField('stage', this.value)">
+                            <option value="new">New</option>
+                            <option value="contacted">Contacted</option>
+                            <option value="qualified">Qualified</option>
+                            <option value="negotiation">Negotiation</option>
+                            <option value="closed_won">Closed Won</option>
+                            <option value="closed_lost">Closed Lost</option>
+                        </select>
+                        <select id="drawerTemp" class="filter-select"
+                            onchange="updateLeadField('temperature', this.value)">
+                            <option value="hot">🔥 Hot</option>
+                            <option value="warm">🌡️ Warm</option>
+                            <option value="cold">❄️ Cold</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="drawer-section">
+                    <h4>🤖 Similar Leads</h4>
+                    <button class="btn btn-secondary" id="findSimilarBtn" onclick="findSimilarLeads()">Find
+                        Similar</button>
+                    <div id="similarResults" class="similar-results"></div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- /panel-leads -->
     <!-- Add/Edit Modal -->
     <div class="modal" id="vehicleModal">
         <div class="modal-content">
@@ -222,45 +355,83 @@
     <!-- Toast Container -->
     <div id="toastContainer" class="toast-container"></div>
 
-    <!-- Login Overlay (Simple Mock) -->
+    <!-- Login Overlay (Supabase Auth) -->
     <div id="loginOverlay" class="login-overlay">
         <div class="login-card">
             <img src="assets/gt-logo-animated.svg" alt="Logo" class="login-logo">
             <h2>Admin Access</h2>
-            <p class="login-subtitle">Enter your credentials to manage inventory</p>
+            <p class="login-subtitle">Sign in to manage inventory & leads</p>
+            <div id="loginError" class="login-error" style="display:none;"></div>
             <div class="form-group">
-                <input type="password" id="adminPass" placeholder="Enter Password" class="login-input"
-                    onkeydown="if(event.key==='Enter')checkLogin()">
+                <input type="email" id="adminEmail" placeholder="Email" class="login-input" autocomplete="email">
             </div>
-            <button class="btn btn-primary btn-submit" onclick="checkLogin()">Login</button>
+            <div class="form-group">
+                <input type="password" id="adminPass" placeholder="Password" class="login-input"
+                    onkeydown="if(event.key==='Enter')handleLogin()">
+            </div>
+            <button class="btn btn-primary btn-submit" id="loginBtn" onclick="handleLogin()">Sign In</button>
         </div>
     </div>
 
     <script type="module" src="js/admin.js"></script>
-    <script>
-        // Simple Mock Auth
-        function checkLogin() {
+    <script type="module" src="js/leads.js"></script>
+    <script type="module">
+        import authService from './js/services/authService.js';
+
+        // Expose to global scope for onclick handlers
+        window.handleLogin = async function () {
+            const email = document.getElementById('adminEmail').value.trim();
             const pass = document.getElementById('adminPass').value;
-            if (pass === 'admin123') {
+            const errorEl = document.getElementById('loginError');
+            const btn = document.getElementById('loginBtn');
+
+            if (!email || !pass) {
+                errorEl.textContent = 'Please enter email and password.';
+                errorEl.style.display = 'block';
+                return;
+            }
+
+            btn.textContent = 'Signing in...';
+            btn.disabled = true;
+
+            const result = await authService.login(email, pass);
+            if (result.success) {
                 document.getElementById('loginOverlay').style.display = 'none';
-                sessionStorage.setItem('isAdmin', 'true');
+                initUserDisplay();
             } else {
+                errorEl.textContent = result.message;
+                errorEl.style.display = 'block';
                 document.getElementById('adminPass').classList.add('shake');
                 setTimeout(() => document.getElementById('adminPass').classList.remove('shake'), 500);
             }
-        }
+            btn.textContent = 'Sign In';
+            btn.disabled = false;
+        };
 
-        function logout() {
-            sessionStorage.removeItem('isAdmin');
-            window.location.reload();
+        window.handleLogout = async function () {
+            await authService.logout();
+        };
+
+        async function initUserDisplay() {
+            const user = await authService.getCurrentUser();
+            if (user) {
+                const profile = await authService.getStaffProfile(user.id);
+                const name = profile?.full_name || user.email.split('@')[0];
+                const userEl = document.getElementById('userDisplay');
+                if (userEl) userEl.textContent = name;
+            }
         }
 
         // Check session on load
-        if (sessionStorage.getItem('isAdmin') === 'true') {
-            document.getElementById('loginOverlay').style.display = 'none';
-        }
+        (async () => {
+            const user = await authService.requireAuth();
+            if (user) {
+                document.getElementById('loginOverlay').style.display = 'none';
+                initUserDisplay();
+            }
+        })();
     </script>
-<script src="js/protect.js"></script>
+    <script src="js/protect.js"></script>
 </body>
 
 </html>

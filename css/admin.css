@@ -654,6 +654,236 @@
     }
 }
 
+/* Login error message */
+.login-error {
+    background: #ffe0e0;
+    color: #c0392b;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+/* User greeting in nav */
+.user-greeting {
+    font-weight: 500;
+    opacity: 0.85;
+    font-size: 0.9rem;
+}
+
+/* --- Tab Navigation --- */
+.admin-tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 24px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0;
+}
+
+.tab-btn {
+    padding: 12px 24px;
+    border: none;
+    background: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #6c757d;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+    color: var(--color-primary);
+}
+
+.tab-btn.active {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+/* --- Lead Stats Mini --- */
+.lead-stats-mini {
+    display: flex;
+    gap: 10px;
+}
+
+.lead-stat-badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.lead-stat-badge.hot {
+    background: #ffe0e0;
+    color: #c0392b;
+}
+
+.lead-stat-badge.warm {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.lead-stat-badge.cold {
+    background: #d6eaf8;
+    color: #2471a3;
+}
+
+/* --- Temperature Badge --- */
+.temp-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.temp-badge.hot {
+    background: #ffe0e0;
+    color: #c0392b;
+}
+
+.temp-badge.warm {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.temp-badge.cold {
+    background: #d6eaf8;
+    color: #2471a3;
+}
+
+/* --- Stage Pill --- */
+.stage-pill {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    background: #e9ecef;
+    color: #495057;
+    text-transform: capitalize;
+}
+
+/* --- Lead Detail Drawer --- */
+.lead-drawer {
+    position: fixed;
+    top: 0;
+    right: -420px;
+    width: 400px;
+    height: 100%;
+    background: white;
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.15);
+    z-index: 2500;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+}
+
+.lead-drawer.open {
+    right: 0;
+}
+
+.drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1;
+}
+
+.drawer-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--color-primary);
+}
+
+.drawer-body {
+    padding: 24px;
+}
+
+.drawer-section {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.drawer-section:last-child {
+    border-bottom: none;
+}
+
+.drawer-section h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+.drawer-section p {
+    font-size: 0.92rem;
+    margin-bottom: 6px;
+    color: var(--color-text);
+}
+
+.drawer-notes {
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 8px;
+    font-style: italic;
+    color: #555;
+}
+
+.drawer-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.drawer-actions .filter-select {
+    flex: 1;
+    min-width: unset;
+}
+
+/* --- Similar Leads --- */
+.similar-results {
+    margin-top: 12px;
+}
+
+.similar-lead-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.similar-score {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-accent);
+}
+
+.text-muted {
+    color: #6c757d;
+    font-size: 0.88rem;
+}
+
 /* --- Mobile Responsive --- */
 @media (max-width: 1024px) {
     .stats-grid {
