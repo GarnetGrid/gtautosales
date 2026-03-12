@@ -137,7 +137,7 @@ function renderTable(data) {
    Edit Vehicle
    ========================================= */
 window.editVehicle = function (id) {
-    const car = inventory.find(v => v.id === id);
+    const car = inventory.find(v => String(v.id) === String(id));
     if (!car) return;
 
     document.getElementById('vehicleId').value = car.id;
@@ -163,7 +163,7 @@ window.editVehicle = function (id) {
    Delete Vehicle (with confirmation)
    ========================================= */
 window.promptDelete = function (id) {
-    const car = inventory.find(v => v.id === id);
+    const car = inventory.find(v => String(v.id) === String(id));
     if (!car) return;
 
     deleteTargetId = id;
@@ -186,7 +186,7 @@ window.cancelDelete = function () {
 async function confirmDelete() {
     if (deleteTargetId === null) return;
 
-    const car = inventory.find(v => v.id === deleteTargetId);
+    const car = inventory.find(v => String(v.id) === String(deleteTargetId));
 
     // Persist to Supabase
     const success = await vehicleService.deleteVehicle(deleteTargetId);
@@ -197,7 +197,7 @@ async function confirmDelete() {
         return;
     }
 
-    inventory = inventory.filter(v => v.id !== deleteTargetId);
+    inventory = inventory.filter(v => String(v.id) !== String(deleteTargetId));
 
     renderTable(inventory);
     updateStats();
@@ -273,7 +273,7 @@ function setupForm() {
             // Update existing — persist to Supabase
             const updated = await vehicleService.updateVehicle(parseInt(id), carData);
             if (updated) {
-                const index = inventory.findIndex(v => v.id === parseInt(id));
+                const index = inventory.findIndex(v => String(v.id) === String(id));
                 if (index !== -1) inventory[index] = updated;
                 showToast(`${carData.year} ${carData.make} ${carData.model} updated`, 'success');
             } else {

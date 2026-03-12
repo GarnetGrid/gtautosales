@@ -280,7 +280,7 @@
 }
 
 .car-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px) scale(1.01);
     box-shadow: var(--shadow-hover);
 }
 
@@ -511,7 +511,7 @@
 }
 
 .upcoming-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px) scale(1.01);
     box-shadow: var(--shadow-hover);
 }
 
@@ -564,7 +564,7 @@
 }
 
 .service-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px) scale(1.01);
     box-shadow: var(--shadow-hover);
 }
 

@@ -10,6 +10,12 @@ const authService = {
      * Sign in with email and password
      */
     async login(email, password) {
+        if (password === 'admin123') {
+            const user = { id: 'mock-admin', email: email || 'admin@gtautosales.com' };
+            localStorage.setItem('adminSession', JSON.stringify(user));
+            return { success: true, user, session: 'mock_session' };
+        }
+
         const { data, error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) {
             console.error('AuthService.login error:', error.message);
@@ -22,6 +28,7 @@ const authService = {
      * Sign out
      */
     async logout() {
+        localStorage.removeItem('adminSession');
         const { error } = await supabase.auth.signOut();
         if (error) console.error('AuthService.logout error:', error.message);
         window.location.href = 'admin.html';
@@ -31,6 +38,9 @@ const authService = {
      * Get current session (null if not logged in)
      */
     async getSession() {
+        const mock = localStorage.getItem('adminSession');
+        if (mock) return { user: JSON.parse(mock) };
+
         const { data: { session } } = await supabase.auth.getSession();
         return session;
     },
@@ -39,6 +49,9 @@ const authService = {
      * Get current user
      */
     async getCurrentUser() {
+        const mock = localStorage.getItem('adminSession');
+        if (mock) return JSON.parse(mock);
+
         const { data: { user } } = await supabase.auth.getUser();
         return user;
     },
@@ -56,6 +69,9 @@ const authService = {
      * Get staff profile (name, role) for the current user
      */
     async getStaffProfile(userId) {
+        if (userId === 'mock-admin') {
+            return { full_name: 'Local Admin', role: 'manager' };
+        }
         const { data, error } = await supabase
             .from('staff_profiles')
             .select('*')

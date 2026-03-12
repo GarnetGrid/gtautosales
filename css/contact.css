@@ -29,11 +29,13 @@
 
 /* ── Form Container ─────────────────────────────────────────── */
 .lead-form {
-    background: var(--card-bg, #1a1a2e);
-    border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+    background: var(--glass-bg, rgba(26, 26, 46, 0.75));
+    -webkit-backdrop-filter: var(--glass-blur, blur(16px));
+    backdrop-filter: var(--glass-blur, blur(16px));
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.15));
     border-radius: 16px;
     padding: 2.5rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--glass-shadow, 0 8px 32px rgba(0, 0, 0, 0.25));
 }
 
 .form-row {
@@ -73,7 +75,9 @@
 .form-group textarea {
     width: 100%;
     padding: 0.85rem 1rem;
-    background: var(--input-bg, rgba(255, 255, 255, 0.05));
+    background: rgba(255, 255, 255, 0.08); /* Dark glass effect */
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
     border: 1px solid var(--border, rgba(255, 255, 255, 0.12));
     border-radius: 10px;
     color: var(--text-primary, #fff);
