@@ -4,7 +4,7 @@
 //  Live Mac Mini API Integration
 // ============================================================
 
-const API_URL = 'https://garnet.garnetgrid.com/api/leads';
+const API_URL = 'https://api.garnetgrid.com/api/leads';
 
 const leadService = {
     /**
